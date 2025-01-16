@@ -19,24 +19,21 @@
   <meta name="author" content="John Doe">
   <meta name="keywords" content="">
   
-    <meta name="description" content="封包监听工具 非web协议抓不到，用wireshark或者科来网络分析系统（新手） 设置代理网络  设置好代理，才能抓包好 抓包游戏 用科来抓包 1.1抓包技术应用意义有些应用是看不到的 1.2抓包技术应用对象手机app、微信小程序、PC应用 1.3抓包技术应用协议1.4抓包技术应用支持Windows、Linux 2.1.1抓包封包工具Fiddler：是一个 http 协议调试代理工具，它能够记录">
+    <meta name="description" content="一识别算法编码类型：1.看位数 2.看密文的特征（数字，字幕，大小写，符号等） 3.看当前的密文存在的地方（web，数据库，操作系统等应用） #详细点：密码存储加密：MD5 SHA1 NTLM AES DES RC4 MD5是 32 或 16 位位由数字”0-9”和字母”a-f”所组成的字符串 不可逆 解密：枚举，碰撞  不直接通过算法解密，枚举 尝试生成很多的加密或者明文的字符去枚举 SHA1">
 <meta property="og:type" content="article">
-<meta property="og:title" content="1.15">
-<meta property="og:url" content="https://znzuishuai.github.io/blog/2025/01/16/1-15/index.html">
+<meta property="og:title" content="1.16">
+<meta property="og:url" content="https://znzuishuai.github.io/blog/2025/01/16/1-16/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="封包监听工具 非web协议抓不到，用wireshark或者科来网络分析系统（新手） 设置代理网络  设置好代理，才能抓包好 抓包游戏 用科来抓包 1.1抓包技术应用意义有些应用是看不到的 1.2抓包技术应用对象手机app、微信小程序、PC应用 1.3抓包技术应用协议1.4抓包技术应用支持Windows、Linux 2.1.1抓包封包工具Fiddler：是一个 http 协议调试代理工具，它能够记录">
+<meta property="og:description" content="一识别算法编码类型：1.看位数 2.看密文的特征（数字，字幕，大小写，符号等） 3.看当前的密文存在的地方（web，数据库，操作系统等应用） #详细点：密码存储加密：MD5 SHA1 NTLM AES DES RC4 MD5是 32 或 16 位位由数字”0-9”和字母”a-f”所组成的字符串 不可逆 解密：枚举，碰撞  不直接通过算法解密，枚举 尝试生成很多的加密或者明文的字符去枚举 SHA1">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://znzuishuai.github.io/blog/image/image-20250116124039382.png">
-<meta property="og:image" content="https://znzuishuai.github.io/blog/image/image-20250116125213221.png">
-<meta property="article:published_time" content="2025-01-16T08:12:07.000Z">
-<meta property="article:modified_time" content="2025-01-16T08:13:02.833Z">
+<meta property="article:published_time" content="2025-01-16T13:25:44.000Z">
+<meta property="article:modified_time" content="2025-01-16T14:15:38.429Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://znzuishuai.github.io/blog/image/image-20250116124039382.png">
   
   
   
-  <title>1.15 - Hexo</title>
+  <title>1.16 - Hexo</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -202,7 +199,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="1.15"></span>
+            <span id="subtitle" data-typed-text="1.16"></span>
           
         </div>
 
@@ -213,8 +210,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-01-16 16:12" pubdate>
-          2025年1月16日 下午
+        <time datetime="2025-01-16 21:25" pubdate>
+          2025年1月16日 晚上
         </time>
       </span>
     
@@ -225,7 +222,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          874 字
+          708 字
         
       </span>
     
@@ -236,7 +233,7 @@
         
         
         
-          8 分钟
+          6 分钟
         
       </span>
     
@@ -273,41 +270,38 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">1.15</h1>
+            <h1 id="seo-header">1.16</h1>
             
             
               <div class="markdown-body">
                 
-                <p>封包监听工具</p>
-<h1 id="非web协议"><a href="#非web协议" class="headerlink" title="非web协议"></a>非web协议</h1><p>抓不到，用wireshark或者科来网络分析系统（新手）</p>
-<h1 id="设置代理"><a href="#设置代理" class="headerlink" title="设置代理"></a>设置代理</h1><p>网络</p>
-<p><img src="/blog/image/image-20250116124039382.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250116124039382"></p>
-<p>设置好代理，才能抓包好</p>
-<p>抓包游戏</p>
-<p>用科来抓包</p>
-<h1 id="1-1抓包技术应用意义"><a href="#1-1抓包技术应用意义" class="headerlink" title="1.1抓包技术应用意义"></a>1.1抓包技术应用意义</h1><p>有些应用是看不到的</p>
-<h1 id="1-2抓包技术应用对象"><a href="#1-2抓包技术应用对象" class="headerlink" title="1.2抓包技术应用对象"></a>1.2抓包技术应用对象</h1><p>手机app、微信小程序、PC应用</p>
-<h1 id="1-3抓包技术应用协议"><a href="#1-3抓包技术应用协议" class="headerlink" title="1.3抓包技术应用协议"></a>1.3抓包技术应用协议</h1><h1 id="1-4抓包技术应用支持"><a href="#1-4抓包技术应用支持" class="headerlink" title="1.4抓包技术应用支持"></a>1.4抓包技术应用支持</h1><p>Windows、Linux</p>
-<h1 id="2-1-1抓包封包工具"><a href="#2-1-1抓包封包工具" class="headerlink" title="2.1.1抓包封包工具"></a>2.1.1抓包封包工具</h1><h2 id="Fiddler："><a href="#Fiddler：" class="headerlink" title="Fiddler："></a>Fiddler：</h2><p>是一个 http 协议调试代理工具，它能够记录并检查所有你的电脑和互联网之间的 http 通讯，设置断点，查看所有的“进出”Fiddler 的数据（指 cookie,html,js,css 等文件）。 Fiddler 要比其他的网络调试器要更加简单，因为它不仅仅暴露 http 通讯还提供了一个用户友好的格式。</p>
-<h2 id="Charles（茶杯）："><a href="#Charles（茶杯）：" class="headerlink" title="Charles（茶杯）："></a>Charles（茶杯）：</h2><p>是一个 HTTP 代理服务器,HTTP 监视器,反转代理服务器，当浏览器连接 Charles 的代理访问互联网时，Charles 可以监控浏览器发送和接收的所有数据。它允许一个开发者查看所有连接互联网的 HTTP 通信，这些包括 request, response 和 HTTP headers （包含 cookies 与 caching 信息）。</p>
-<h2 id="TCPDump："><a href="#TCPDump：" class="headerlink" title="TCPDump："></a>TCPDump：</h2><p>是可以将网络中传送的数据包完全截获下来提供分析。它支持针对网络层、协议、主机、网络或端口的过滤，并提供 and、or、not 等逻辑语句来帮助你去掉无用的信息。</p>
-<h2 id="BurpSuite："><a href="#BurpSuite：" class="headerlink" title="BurpSuite："></a>BurpSuite：</h2><p>是用于攻击 web 应用程序的集成平台，包含了许多工具。Burp Suite 为这些工具设计了许多接口，以加快攻击应用程序的过程。所有工具都共享一个请求，并能处理对应的 HTTP 消息、持久性、认证、代理、日志、警报。</p>
-<h2 id="Wireshark："><a href="#Wireshark：" class="headerlink" title="Wireshark："></a>Wireshark：</h2><p>是一个网络封包分析软件。网络封包分析软件的功能是截取网络封包，并尽可能显示出最为详细的网络封包资料。Wireshark 使用 WinPCAP 作为接口，直接与网卡进行数据报文交换。</p>
-<h2 id="科来网络分析系统："><a href="#科来网络分析系统：" class="headerlink" title="科来网络分析系统："></a>科来网络分析系统：</h2><p>是一款由科来软件全自主研发，并拥有全部知识产品的网络分析产品。该系统具有行业领先的专家分析技术，通过捕获并分析网络中传输的底层数据包，对网络故障、网络安全</p>
-<p>以及网络性能进行全面分析，从而快速排查网络中出现或潜在的故障、安全及性能问题。</p>
-<h2 id="WPE-封包分析："><a href="#WPE-封包分析：" class="headerlink" title="WPE&amp;封包分析："></a>WPE&amp;封包分析：</h2><p>是强大的网络封包编辑器，wpe 可以截取网络上的信息，修改封包数据，是外挂制作的常用工具。一般在安全测试中可用来调试数据通讯地址</p>
-<p>通过浏览器功能：浏览器右键“检查”</p>
-<p>2.2APP&amp;小程序&amp;PC 抓包 HTTP&#x2F;S 数据-Charles&amp;Fiddler&amp;Burpsuite<br>app不走web协议，用科来和封包工具</p>
-<p>Charles（茶杯）</p>
-<p>安装证书<br>设置HTTP代理—&gt;运行工具的本机IP端口</p>
-<p>BurpSuite:</p>
-<p>点对点可以抓实时的，可以做安全测试</p>
-<p>burpsuite 茶杯 fiddler 需要配置代理监听抓取</p>
-<p>wireshark 科来 不需要配置任何东西</p>
-<p>2.3程序进程&amp;网络接口&amp;其他协议抓包-WireShark&amp;科来网络分析系统<br>Wireshark：</p>
-<p>选以太网，用筛选器</p>
-<p>2.4通讯类应用封包分析发送接收-WPE 四件套封包&amp;科来网络分析系统</p>
-<p><img src="/blog/image/image-20250116125213221.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250116125213221"></p>
+                <h1 id="一"><a href="#一" class="headerlink" title="一"></a>一</h1><h2 id="识别算法编码类型："><a href="#识别算法编码类型：" class="headerlink" title="识别算法编码类型："></a>识别算法编码类型：</h2><p>1.看位数</p>
+<p>2.看密文的特征（数字，字幕，大小写，符号等）</p>
+<p>3.看当前的密文存在的地方（web，数据库，操作系统等应用）</p>
+<p>#详细点：<br>密码存储加密：<br>MD5 SHA1 NTLM AES DES RC4</p>
+<h1 id="MD5"><a href="#MD5" class="headerlink" title="MD5"></a>MD5</h1><p>是 32 或 16 位位由数字”0-9”和字母”a-f”所组成的字符串</p>
+<p>不可逆</p>
+<p>解密：枚举，碰撞 </p>
+<p>不直接通过算法解密，枚举</p>
+<p>尝试生成很多的加密或者明文的字符去枚举</p>
+<h1 id="SHA1"><a href="#SHA1" class="headerlink" title="SHA1"></a>SHA1</h1><p> 这种加密的密文特征跟 MD5 差不多，只不过位数是 40</p>
+<h1 id="NTLM"><a href="#NTLM" class="headerlink" title="NTLM"></a>NTLM</h1><p>这种加密是 Windows 的哈希密码，标准通讯安全协议</p>
+<h1 id="AES-DES-RC4"><a href="#AES-DES-RC4" class="headerlink" title="AES,DES,RC4"></a>AES,DES,RC4</h1><p> 这些都是非对称性加密算法，引入密钥，密文特征与 Base64 类似<br>应用场景：各类应用密文，自定义算法，代码分析，CTF 安全比赛等</p>
+<h1 id="传输数据编码："><a href="#传输数据编码：" class="headerlink" title="传输数据编码："></a>传输数据编码：</h1><h1 id="BASE64-URL-HEX-ASCII"><a href="#BASE64-URL-HEX-ASCII" class="headerlink" title="BASE64 URL HEX ASCII"></a>BASE64 URL HEX ASCII</h1><h2 id="BASE64"><a href="#BASE64" class="headerlink" title="BASE64"></a>BASE64</h2><p>值是由数字”0-9”和字母”a-f”所组成的字符串,大小写敏感,结尾通常有符号&#x3D;</p>
+<h2 id="URL"><a href="#URL" class="headerlink" title="URL"></a>URL</h2><p> 编码是由数字”0-9”和字母”a-f”所组成的字符串,大小写敏感,通常以%数字字母间隔</p>
+<h2 id="HEX"><a href="#HEX" class="headerlink" title="HEX"></a>HEX</h2><p> 编码是计算机中数据的一种表示方法,将数据进行十六进制转换,它由 0-9,A-F,组成</p>
+<h2 id="ASCII-编码"><a href="#ASCII-编码" class="headerlink" title="ASCII 编码"></a>ASCII 编码</h2><p>是将 128 个字符进行进制数来表示,常见 ASCII 码表大小规则：0<del>9&lt;A</del>Z&lt;a~z</p>
+<p>举例：<br>个人博客-URL 解码<br>国外 WEB-BASE64 解码<br>搜狐视频-BASE64 解码<br>应用场景：参数传递(如注入影响)，后期 WAF 绕过干扰写法应用，视频地址还原等</p>
+<h1 id="JS-前端代码加密："><a href="#JS-前端代码加密：" class="headerlink" title="JS 前端代码加密："></a>JS 前端代码加密：</h1><p>JS 颜文字 jother JSFUCK</p>
+<h2 id="颜文字特征："><a href="#颜文字特征：" class="headerlink" title="颜文字特征："></a>颜文字特征：</h2><p>一堆颜文字构成的 js 代码，在 F12 中可直接解密执行</p>
+<h1 id="jother-特征："><a href="#jother-特征：" class="headerlink" title="jother 特征："></a>jother 特征：</h1><p>只用! + ( ) [ ] { }这八个字符就能完成对任意字符串的编码。也可在 F12 中解密执行</p>
+<h1 id="JSFUCK-特征："><a href="#JSFUCK-特征：" class="headerlink" title="JSFUCK 特征："></a>JSFUCK 特征：</h1><p>与 jother 很像，只是少了{ }</p>
+<h1 id="后端代码加密："><a href="#后端代码加密：" class="headerlink" title="后端代码加密："></a>后端代码加密：</h1><p>PHP .NET JAVA</p>
+<h1 id="PHP："><a href="#PHP：" class="headerlink" title="PHP："></a>PHP：</h1><p>乱码，头部有信息</p>
+<h1 id="NET："><a href="#NET：" class="headerlink" title=".NET："></a>.NET：</h1><p>DLL 封装代码文件</p>
+<h1 id="JAVA："><a href="#JAVA：" class="headerlink" title="JAVA："></a>JAVA：</h1><p>JAR&amp;CLASS 文件<br>举例：Zend ILSpy IDEA<br>应用场景：版权代码加密，开发特性，CTF 比赛等<br>数据库密文加密：<br>MYSQL MSSQL 等<br>数据显示编码：<br>UTF-8 GBK2312 等</p>
+<h1 id="mimikatz"><a href="#mimikatz" class="headerlink" title="mimikatz"></a>mimikatz</h1><p>是获取操作系统WINDOWS操作系统上面的一个铭文密码</p>
+<p>资源：<br><a target="_blank" rel="noopener" href="https://www.cmd5.com/">https://www.cmd5.com</a><br><a target="_blank" rel="noopener" href="http://tmxk.org/jother">http://tmxk.org/jother</a><br><a target="_blank" rel="noopener" href="http://www.jsfuck.com/">http://www.jsfuck.com</a><br><a target="_blank" rel="noopener" href="http://www.hiencode.com/">http://www.hiencode.com</a><br><a target="_blank" rel="noopener" href="http://tool.chacuo.net/cryptaes">http://tool.chacuo.net/cryptaes</a><br><a target="_blank" rel="noopener" href="https://utf-8.jp/public/aaencode.html">https://utf-8.jp/public/aaencode.html</a><br>1.30 余种加密编码类型的密文特征分析（建议收藏）<br><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=MzAwNDcxMjI2MA==&mid=2247484455&idx=1&sn=e1b4324ddcf7d6">https://mp.weixin.qq.com/s?__biz=MzAwNDcxMjI2MA==&amp;mid=2247484455&amp;idx=1&amp;sn=e1b4324ddcf7d6</a><br>123be30d9a5613e17b&amp;chksm&#x3D;9b26f60cac517f1a920cf3b73b3212a645aeef78882c47957b9f3c2135cb7ce<br>051c73fe77bb2&amp;mpshare&#x3D;1&amp;scene&#x3D;23&amp;srcid&#x3D;1111auAYWmr1N0NAs9Wp2hGz&amp;sharer_sharetime&#x3D;1605<br>145141579&amp;sharer_shareid&#x3D;5051b3eddbbe2cb698aedf9452370026#rd<br>2.CTF 中常见密码题解密网站总结（建议收藏）<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_41638851/article/details/100526839">https://blog.csdn.net/qq_41638851/article/details/100526839</a><br>3.CTF 密码学常见加密解密总结（建议收藏）<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_40837276/article/details/83080460">https://blog.csdn.net/qq_40837276/article/details/83080460</a></p>
 
                 
               </div>
@@ -325,8 +319,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>1.15</div>
-      <div>https://znzuishuai.github.io/blog/2025/01/16/1-15/</div>
+      <div>1.16</div>
+      <div>https://znzuishuai.github.io/blog/2025/01/16/1-16/</div>
     </div>
     <div class="license-meta">
       
@@ -370,18 +364,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/blog/2025/01/16/1-16%E9%A2%98/" title="1.16">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">1.16</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/blog/2025/01/16/1-15%E9%A2%98/" title="1.15题">
-                        <span class="hidden-mobile">1.15题</span>
+                      <a href="/blog/2025/01/16/1-16%E9%A2%98/" title="1.16">
+                        <span class="hidden-mobile">1.16</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
