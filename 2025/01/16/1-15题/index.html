@@ -1,0 +1,767 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/blog/img/fluid.png">
+  <link rel="icon" href="/blog/img/fluid.png">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="一  备份文件，直接在链接里输入 打开下载的文件，用记事本打开  be0c4c2ebbd3e4ba8fe54593210346d0.txt 感觉这一串和给的链接长得好像，或许也是个文件，尝试一下  还真是 二 什么bugscanteam的githack  yes,新的尝试  用python2 clone成功了，打开看看   用git reset –hard 来看 打开目录  ctfhub{e50c">
+<meta property="og:type" content="article">
+<meta property="og:title" content="1.15题">
+<meta property="og:url" content="https://znzuishuai.github.io/blog/2025/01/16/1-15%E9%A2%98/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="一  备份文件，直接在链接里输入 打开下载的文件，用记事本打开  be0c4c2ebbd3e4ba8fe54593210346d0.txt 感觉这一串和给的链接长得好像，或许也是个文件，尝试一下  还真是 二 什么bugscanteam的githack  yes,新的尝试  用python2 clone成功了，打开看看   用git reset –hard 来看 打开目录  ctfhub{e50c">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://znzuishuai.github.io/blog/image/image-20250115154928630.png">
+<meta property="og:image" content="https://znzuishuai.github.io/blog/image/image-20250115155106171.png">
+<meta property="og:image" content="https://znzuishuai.github.io/blog/image/image-20250115155216800.png">
+<meta property="og:image" content="https://znzuishuai.github.io/blog/image/image-20250115155517791.png">
+<meta property="og:image" content="https://znzuishuai.github.io/blog/image/image-20250115155947683.png">
+<meta property="og:image" content="https://znzuishuai.github.io/blog/image/image-20250115170955487.png">
+<meta property="og:image" content="https://znzuishuai.github.io/blog/image/image-20250115181819853.png">
+<meta property="og:image" content="https://znzuishuai.github.io/blog/image/image-20250115181910830.png">
+<meta property="og:image" content="https://znzuishuai.github.io/blog/image/image-20250115182121274.png">
+<meta property="og:image" content="https://znzuishuai.github.io/blog/image/image-20250115182603725.png">
+<meta property="og:image" content="https://znzuishuai.github.io/blog/image/image-20250115183021347.png">
+<meta property="og:image" content="https://znzuishuai.github.io/blog/image/image-20250115183517890.png">
+<meta property="og:image" content="https://znzuishuai.github.io/blog/image/image-20250115183558001.png">
+<meta property="og:image" content="https://znzuishuai.github.io/blog/image/image-20250115183653219.png">
+<meta property="og:image" content="https://znzuishuai.github.io/blog/image/image-20250115183732917.png">
+<meta property="og:image" content="https://znzuishuai.github.io/blog/image/image-20250115184059084.png">
+<meta property="og:image" content="https://znzuishuai.github.io/blog/image/image-20250115184322787.png">
+<meta property="og:image" content="https://znzuishuai.github.io/blog/image/image-20250115185522424.png">
+<meta property="og:image" content="https://znzuishuai.github.io/blog/image/image-20250115193849810.png">
+<meta property="og:image" content="https://znzuishuai.github.io/blog/image/image-20250115193944220.png">
+<meta property="og:image" content="https://znzuishuai.github.io/blog/image/image-20250115194258894.png">
+<meta property="og:image" content="https://znzuishuai.github.io/blog/image/image-20250115194857853.png">
+<meta property="og:image" content="https://znzuishuai.github.io/blog/image/image-20250115195416966.png">
+<meta property="og:image" content="https://znzuishuai.github.io/blog/image/image-20250115195518713.png">
+<meta property="og:image" content="https://znzuishuai.github.io/blog/image/image-20250115195640361.png">
+<meta property="og:image" content="https://znzuishuai.github.io/blog/image/image-20250115203730024.png">
+<meta property="og:image" content="https://znzuishuai.github.io/blog/image/image-20250115203758157.png">
+<meta property="og:image" content="https://znzuishuai.github.io/blog/image/image-20250115204042703.png">
+<meta property="og:image" content="https://znzuishuai.github.io/blog/image/image-20250115204128139.png">
+<meta property="og:image" content="https://znzuishuai.github.io/blog/image/image-20250115205427247.png">
+<meta property="og:image" content="https://znzuishuai.github.io/blog/image/image-20250115205445523.png">
+<meta property="og:image" content="https://znzuishuai.github.io/blog/image/image-20250115210144055.png">
+<meta property="og:image" content="https://znzuishuai.github.io/blog/image/image-20250115210404583.png">
+<meta property="og:image" content="https://znzuishuai.github.io/blog/image/image-20250115210621323.png">
+<meta property="og:image" content="https://znzuishuai.github.io/blog/image/image-20250115211013056.png">
+<meta property="og:image" content="https://znzuishuai.github.io/blog/image/image-20250115211103827.png">
+<meta property="og:image" content="https://znzuishuai.github.io/blog/image/image-20250115211703266.png">
+<meta property="og:image" content="https://znzuishuai.github.io/blog/image/image-20250115211737920.png">
+<meta property="article:published_time" content="2025-01-16T07:59:36.000Z">
+<meta property="article:modified_time" content="2025-01-16T08:11:31.530Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://znzuishuai.github.io/blog/image/image-20250115154928630.png">
+  
+  
+  
+  <title>1.15题 - Hexo</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/blog/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/blog/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/blog/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"znzuishuai.github.io","root":"/blog/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/blog/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/blog/js/utils.js" ></script>
+  <script  src="/blog/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/blog/">
+      <strong>Fluid</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/blog/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/blog/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/blog/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/blog/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/blog/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/blog/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="1.15题"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2025-01-16 15:59" pubdate>
+          2025年1月16日 下午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          1.1k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          10 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">1.15题</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="一"><a href="#一" class="headerlink" title="一"></a>一</h1><p><img src="/blog/image/image-20250115154928630.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250115154928630"></p>
+<p><img src="/blog/image/image-20250115155106171.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250115155106171"></p>
+<p>备份文件，直接在链接里输入</p>
+<p>打开下载的文件，用记事本打开</p>
+<p><img src="/blog/image/image-20250115155216800.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250115155216800"></p>
+<p>be0c4c2ebbd3e4ba8fe54593210346d0.txt</p>
+<p>感觉这一串和给的链接长得好像，或许也是个文件，尝试一下</p>
+<p><img src="/blog/image/image-20250115155517791.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250115155517791"></p>
+<p>还真是</p>
+<h1 id="二"><a href="#二" class="headerlink" title="二"></a>二</h1><p><img src="/blog/image/image-20250115155947683.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250115155947683"></p>
+<p>什么bugscanteam的githack</p>
+<p><img src="/blog/image/image-20250115170955487.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250115170955487"></p>
+<p>yes,新的尝试</p>
+<p><img src="/blog/image/image-20250115181819853.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250115181819853"></p>
+<p>用python2</p>
+<p>clone成功了，打开看看</p>
+<p><img src="/blog/image/image-20250115181910830.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250115181910830"></p>
+<p><img src="/blog/image/image-20250115182121274.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250115182121274"></p>
+<p><img src="/blog/image/image-20250115182603725.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250115182603725">用git reset –hard 来看</p>
+<p>打开目录</p>
+<p><img src="/blog/image/image-20250115183021347.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250115183021347"></p>
+<p>ctfhub{e50c10ceb7a462819b5bda12}</p>
+<h1 id="三"><a href="#三" class="headerlink" title="三"></a>三</h1><p>从网上学习的  git stash pop，</p>
+<p><img src="/blog/image/image-20250115183517890.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250115183517890"></p>
+<p>和上面同样的方法</p>
+<p><img src="/blog/image/image-20250115183558001.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250115183558001"></p>
+<p>发现里面有个被删除的文件</p>
+<p>more 开看看</p>
+<p><img src="/blog/image/image-20250115183653219.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250115183653219"></p>
+<p><img src="/blog/image/image-20250115183732917.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250115183732917"></p>
+<h1 id="四"><a href="#四" class="headerlink" title="四"></a>四</h1><p>仁慈的一道题</p>
+<p>用着同样的方法，直接打开</p>
+<p>python2 GitHack.py <a target="_blank" rel="noopener" href="http://challenge-a0e4ce7a885f3ba9.sandbox.ctfhub.com:10800/.git">http://challenge-a0e4ce7a885f3ba9.sandbox.ctfhub.com:10800/.git</a></p>
+<p><img src="/blog/image/image-20250115184059084.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250115184059084"></p>
+<p>ctfhub{98e5cbc8ebf8cf3a9498d7b1}（图片打开错了）</p>
+<p><img src="/blog/image/image-20250115184322787.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250115184322787"></p>
+<h2 id="开源的版本控制系统"><a href="#开源的版本控制系统" class="headerlink" title="开源的版本控制系统"></a>开源的版本控制系统</h2><p>‌**<a target="_blank" rel="noopener" href="https://www.baidu.com/s?ch=11&tn=98010089_dg&wd=SVN&usm=3&ie=utf-8&rsv_pq=f4bb184c001db46d&oq=SVN%E6%98%AF%E4%BB%80%E4%B9%88&rsv_t=2ab90XFETOQeGhJdgVzOepRb7ajTB3BITdf6yrYZ4MVdyZvEvDchr9Vudm6hPZ9g+OQ&rsv_dl=re_dqa_generate&sa=re_dqa_generate">SVN</a>（Subversion）是一个开源的版本控制系统**‌，主要用于多人共同开发同一个项目，实现资源的共享和管理。它通过分支管理系统的使用，简化了版本管理，提高了开发效率。‌</p>
+<h3 id="SVN的基本概念和功能"><a href="#SVN的基本概念和功能" class="headerlink" title="SVN的基本概念和功能"></a>SVN的基本概念和功能</h3><p>SVN（Subversion）是一个开放源代码的版本控制系统，主要用于软件开发过程中的文件变更管理。它能够记录每个版本的信息，方便问题追踪，并且支持并行开发，提高了开发效率。SVN采用分支管理系统，相较于<a target="_blank" rel="noopener" href="https://www.baidu.com/s?ch=11&tn=98010089_dg&wd=RCS&usm=3&ie=utf-8&rsv_pq=f4bb184c001db46d&oq=SVN%E6%98%AF%E4%BB%80%E4%B9%88&rsv_t=5139Dnyr9jzngHlAWqqdrWvc5+UWzPf/eMG6eB8MUk7Mwzyt3XGEd45KXqkdyuMzSX0&rsv_dl=re_dqa_generate&sa=re_dqa_generate">RCS</a>和<a target="_blank" rel="noopener" href="https://www.baidu.com/s?ch=11&tn=98010089_dg&wd=CVS&usm=3&ie=utf-8&rsv_pq=f4bb184c001db46d&oq=SVN%E6%98%AF%E4%BB%80%E4%B9%88&rsv_t=4afa90+YHB9eWfNmy7r19vlcgCA5sHVVBjc7DGmtLZI9hCeJP1S+vd1gYnNQBX5JRjE&rsv_dl=re_dqa_generate&sa=re_dqa_generate">CVS</a>，它设计目标是取代CVS，提供更高效的管理方式。</p>
+<h3 id="SVN的主要操作"><a href="#SVN的主要操作" class="headerlink" title="SVN的主要操作"></a>SVN的主要操作</h3><p>SVN的主要操作包括：</p>
+<ul>
+<li>‌**检出（Checkout）**‌：从服务器获取项目副本。</li>
+<li>‌**添加（Add）**‌：将新文件或目录加入版本控制。</li>
+<li>‌**删除（Delete）**‌：从版本控制中移除文件或目录。</li>
+<li>‌**提交（Commit）**‌：将本地更改上传到服务器。</li>
+<li>‌**更新（Update）**‌：从服务器获取最新的项目版本。</li>
+<li>‌**合并（Merge）**‌：合并不同分支的更改。</li>
+<li>‌**日志（Log）**‌：查看项目的历史记录。</li>
+<li>‌**状态（Status）**‌：查看当前项目的状态。</li>
+<li>‌**帮助（Help）**‌：获取SVN命令的帮助信息。</li>
+</ul>
+<h3 id="SVN的优缺点"><a href="#SVN的优缺点" class="headerlink" title="SVN的优缺点"></a>SVN的优缺点</h3><p>‌<strong>优点</strong>‌：</p>
+<ul>
+<li>‌<strong>操作简单</strong>‌：容易上手，适合新手使用。</li>
+<li>‌<strong>跨平台</strong>‌：支持Windows、Linux、MacOS等多个操作系统。</li>
+<li>‌<strong>支持版本回退</strong>‌：可以方便地回退到之前的版本。</li>
+<li>‌<strong>高效管理</strong>‌：通过分支管理系统提高开发效率。</li>
+</ul>
+<p>‌<strong>缺点</strong>‌：</p>
+<ul>
+<li>‌<strong>性能问题</strong>‌：在大项目中，SVN的性能可能不如<a target="_blank" rel="noopener" href="https://www.baidu.com/s?ch=11&tn=98010089_dg&wd=Git&usm=3&ie=utf-8&rsv_pq=f4bb184c001db46d&oq=SVN%E6%98%AF%E4%BB%80%E4%B9%88&rsv_t=ad74E5pBjgTz3Il31BytS1OaaQp04/M7iA0PYBOGsnCUVbc9Sz2L0jvU/fMmjeQ8QZA&rsv_dl=re_dqa_generate&sa=re_dqa_generate">Git</a>，尤其是在处理大量文件和复杂项目时。</li>
+<li>‌<strong>存储方式</strong>‌：SVN的存储方式可能不如Git灵活，尤其是在分布式环境中。</li>
+</ul>
+<p>已经将dvcs-ripper弄到虚拟机了</p>
+<p><img src="/blog/image/image-20250115185522424.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250115185522424"></p>
+<p>用&#x2F;rip-svn.pl -v -u来做</p>
+<h1 id="五"><a href="#五" class="headerlink" title="五"></a>五</h1><p>转战这个ctfshow了，后面的实在不会了</p>
+<p><img src="/blog/image/image-20250115193849810.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250115193849810"></p>
+<p>直接抓包</p>
+<p><img src="/blog/image/image-20250115193944220.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250115193944220"></p>
+<p>Y3Rmc2hvd3tjYzhjM2E1ZS1lOGNlLTRlN2YtODczNC0zZmY3ZjI2MjQ3NGZ9</p>
+<p>解码</p>
+<p>ctfshow{cc8c3a5e-e8ce-4e7f-8734-3ff7f262474f}</p>
+<h1 id="六"><a href="#六" class="headerlink" title="六"></a>六</h1><p><img src="/blog/image/image-20250115194258894.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250115194258894"></p>
+<p>和昨天的一道题类似</p>
+<p><img src="/blog/image/image-20250115194857853.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250115194857853"></p>
+<p><img src="/blog/image/image-20250115195416966.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250115195416966"></p>
+<p><img src="/blog/image/image-20250115195518713.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250115195518713"></p>
+<p>找到200了</p>
+<p>解码</p>
+<p><img src="/blog/image/image-20250115195640361.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250115195640361"></p>
+<p>ctfshow{6e6d14d4-2f4c-4a3b-8bd8-06fcc79f619e}</p>
+<h1 id="七"><a href="#七" class="headerlink" title="七"></a>七</h1><p><img src="/blog/image/image-20250115203730024.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250115203730024"></p>
+<p>直接抓包</p>
+<p><img src="/blog/image/image-20250115203758157.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250115203758157"></p>
+<h1 id="八"><a href="#八" class="headerlink" title="八"></a>八</h1><p><img src="/blog/image/image-20250115204042703.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250115204042703"></p>
+<p><img src="/blog/image/image-20250115204128139.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250115204128139"></p>
+<p>直接抓包</p>
+<h1 id="九"><a href="#九" class="headerlink" title="九"></a>九</h1><p><img src="/blog/image/image-20250115205427247.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250115205427247"></p>
+<p>直接抓包</p>
+<p><img src="/blog/image/image-20250115205445523.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250115205445523"></p>
+<h1 id="十"><a href="#十" class="headerlink" title="十"></a>十</h1><p><img src="/blog/image/image-20250115210144055.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250115210144055"></p>
+<p>Robots协议，全称为 <strong>网络爬虫排除标准</strong> （Robots Exclusion Protocol，简称REP），是一种 <strong>存放于网站根目录下的ASCII编码文本文件</strong> <strong>5</strong>。该文件通过特定的语法和规则，告诉网络搜索引擎的漫游器（网络蜘蛛）哪些页面可以抓取，哪些页面不能抓取<strong>6</strong>。</p>
+<p>具体来说，Robots协议的作用包括<strong>4</strong>：</p>
+<ol>
+<li><strong>保护网站隐私</strong> ：防止网站的重要信息被泄露，增强网站安全性<strong>2</strong>。</li>
+<li><strong>节省服务器带宽</strong> ：通过屏蔽一些大文件（如图片、音乐、视频等），减少搜索引擎抓取时的数据传输量，从而节省服务器带宽。</li>
+<li><strong>提高抓取效率</strong> ：指定搜索引擎只抓取特定的内容，避免抓取不必要的页面，提高抓取效率。</li>
+<li><strong>遵守国际道德规范</strong> ：Robots协议基于网络搜索技术应服务于人类，尊重信息提供者的意愿，并维护其隐私权的原则<strong>4</strong>。</li>
+</ol>
+<p>Robots协议以“User-agent”开始，用于指定爬虫的身份<strong>1</strong>。例如，“User-agent: Baiduspider”表示百度的爬虫，“User-agent: <em>”表示未指定身份的所有爬虫*<em>1</em></em>。</p>
+<p>需要注意的是，虽然Robots协议是一种约定俗成的标准，但并不能保证100%的隐私保护，因为有些爬虫可能会忽略或不遵守该协议。</p>
+<p>创建和编辑Robots协议非常简单，可以使用任何常见的文本编辑器（如Windows系统自带的Notepad）进行操作<strong>3</strong>。文件名应统一为小写，并放置在网站的根目录下<strong>6</strong>。</p>
+<p><img src="/blog/image/image-20250115210404583.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250115210404583">这个是个文件</p>
+<p><img src="/blog/image/image-20250115210621323.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250115210621323"></p>
+<h1 id="十一"><a href="#十一" class="headerlink" title="十一"></a>十一</h1><p><img src="/blog/image/image-20250115211013056.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250115211013056"></p>
+<p>看着是倒叙，试试</p>
+<p><img src="/blog/image/image-20250115211103827.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250115211103827"></p>
+<h1 id="十二"><a href="#十二" class="headerlink" title="十二"></a>十二</h1><p><img src="/blog/image/image-20250115211703266.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250115211703266"></p>
+<p>base64解码</p>
+<p><img src="/blog/image/image-20250115211737920.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250115211737920"></p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>1.15题</div>
+      <div>https://znzuishuai.github.io/blog/2025/01/16/1-15题/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>John Doe</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2025年1月16日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/blog/2025/01/16/1-15/" title="1.15">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">1.15</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/blog/2025/01/16/1-14/" title="1.14">
+                        <span class="hidden-mobile">1.14</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/blog/js/events.js" ></script>
+<script  src="/blog/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/blog/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/blog/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/blog/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
