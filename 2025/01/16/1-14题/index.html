@@ -19,30 +19,62 @@
   <meta name="author" content="John Doe">
   <meta name="keywords" content="">
   
-    <meta name="description" content="攻击的协议在防火墙上面  棱角 内网内网(a,b,c)可以主动找外网，但是外网不能主动找内网,外网只能找到那个圈那里 nc的作用 Linux命令200例：nc非常有用的网络工具（常用）_nc命令-CSDN博客 正反向问题防火墙，入站严格，出站宽松 当防火墙打开时，尽可能让对方出来找我们 正反向指的是以谁为基本，对方写的东西来找我们，从他们的角度是正向，从我们的角度是反向 -FOfa linux命令">
+    <meta name="description" content="一感觉是答案和admin有关  有个admin，only可能是1  ctfhub{8ebefd0acf262a9ec4e56899} 二 先抓包   没有显示，诱人的give me flag 点击他！  传给repeater  ctfhub{ccdc59dd621497d091d70348} 三先抓包   放行是这个，说GET不行，用CTFHUB  四  要解密这个，抓包看看   爆破，账户是ad">
 <meta property="og:type" content="article">
-<meta property="og:title" content="1.13题">
-<meta property="og:url" content="https://znzuishuai.github.io/blog/2025/01/16/1-13%E9%A2%98/index.html">
+<meta property="og:title" content="1.14题">
+<meta property="og:url" content="https://znzuishuai.github.io/blog/2025/01/16/1-14%E9%A2%98/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="攻击的协议在防火墙上面  棱角 内网内网(a,b,c)可以主动找外网，但是外网不能主动找内网,外网只能找到那个圈那里 nc的作用 Linux命令200例：nc非常有用的网络工具（常用）_nc命令-CSDN博客 正反向问题防火墙，入站严格，出站宽松 当防火墙打开时，尽可能让对方出来找我们 正反向指的是以谁为基本，对方写的东西来找我们，从他们的角度是正向，从我们的角度是反向 -FOfa linux命令">
+<meta property="og:description" content="一感觉是答案和admin有关  有个admin，only可能是1  ctfhub{8ebefd0acf262a9ec4e56899} 二 先抓包   没有显示，诱人的give me flag 点击他！  传给repeater  ctfhub{ccdc59dd621497d091d70348} 三先抓包   放行是这个，说GET不行，用CTFHUB  四  要解密这个，抓包看看   爆破，账户是ad">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://znzuishuai.github.io/blog/image/12.png">
-<meta property="og:image" content="https://znzuishuai.github.io/blog/image/13.png">
-<meta property="og:image" content="https://znzuishuai.github.io/blog/image/14.png">
-<meta property="og:image" content="https://znzuishuai.github.io/blog/image/image-20250113185800931.png">
-<meta property="og:image" content="https://znzuishuai.github.io/blog/image/image-20250113185904393.png">
-<meta property="og:image" content="https://znzuishuai.github.io/blog/image/image-20250113185946169.png">
-<meta property="og:image" content="https://znzuishuai.github.io/blog/image/image-20250113190002408.png">
-<meta property="og:image" content="https://znzuishuai.github.io/blog/image/image-20250113190031944.png">
-<meta property="article:published_time" content="2025-01-16T06:41:17.000Z">
-<meta property="article:modified_time" content="2025-01-16T06:51:21.686Z">
+<meta property="og:image" content="c:\Users\1\AppData\Roaming\Typora\typora-user-images\image-20250113220803960.png">
+<meta property="og:image" content="https://znzuishuai.github.io/blog/image/15.png">
+<meta property="og:image" content="https://znzuishuai.github.io/blog/image/image-20250113221334435.png">
+<meta property="og:image" content="https://znzuishuai.github.io/blog/image/image-20250113223353159.png">
+<meta property="og:image" content="https://znzuishuai.github.io/blog/image/image-20250113223516767.png">
+<meta property="og:image" content="https://znzuishuai.github.io/blog/image/image-20250113223555832.png">
+<meta property="og:image" content="https://znzuishuai.github.io/blog/image/image-20250113223903668.png">
+<meta property="og:image" content="https://znzuishuai.github.io/blog/image/image-20250113223934500.png">
+<meta property="og:image" content="c:\Users\1\AppData\Roaming\Typora\typora-user-images\image-20250113214639085.png">
+<meta property="og:image" content="c:\Users\1\AppData\Roaming\Typora\typora-user-images\image-20250113214744762.png">
+<meta property="og:image" content="c:\Users\1\AppData\Roaming\Typora\typora-user-images\image-20250113214849184.png">
+<meta property="og:image" content="https://znzuishuai.github.io/blog/image/image-20250114160514796.png">
+<meta property="og:image" content="c:\Users\1\AppData\Roaming\Typora\typora-user-images\image-20250114160600036.png">
+<meta property="og:image" content="https://znzuishuai.github.io/blog/image/image-20250114160600036.png">
+<meta property="og:image" content="https://znzuishuai.github.io/blog/image/image-20250114162325436.png">
+<meta property="og:image" content="https://znzuishuai.github.io/blog/image/image-20250114163630166.png">
+<meta property="og:image" content="https://znzuishuai.github.io/blog/image/image-20250114172116276.png">
+<meta property="og:image" content="https://znzuishuai.github.io/blog/image/image-20250114172139329.png">
+<meta property="og:image" content="https://znzuishuai.github.io/blog/image/image-20250114172139329.png">
+<meta property="og:image" content="https://znzuishuai.github.io/blog/image/image-20250114172902100.png">
+<meta property="og:image" content="c:\Users\1\AppData\Roaming\Typora\typora-user-images\image-20250114172947684.png">
+<meta property="og:image" content="https://znzuishuai.github.io/blog/image/image-20250114173700384.png">
+<meta property="og:image" content="https://znzuishuai.github.io/blog/image/image-20250114173935555.png">
+<meta property="og:image" content="https://znzuishuai.github.io/blog/image/image-20250114173952622.png">
+<meta property="og:image" content="https://znzuishuai.github.io/blog/image/image-20250114174204603.png">
+<meta property="og:image" content="https://znzuishuai.github.io/blog/image/image-20250114174341067.png">
+<meta property="og:image" content="https://znzuishuai.github.io/blog/image/image-20250114174418421.png">
+<meta property="og:image" content="https://znzuishuai.github.io/blog/image/image-20250114182720640.png">
+<meta property="og:image" content="https://znzuishuai.github.io/blog/image/image-20250114182744342.png">
+<meta property="og:image" content="https://znzuishuai.github.io/blog/image/image-20250114182819584.png">
+<meta property="og:image" content="https://znzuishuai.github.io/blog/image/image-20250114183906999.png">
+<meta property="og:image" content="https://znzuishuai.github.io/blog/image/image-20250114184610094.png">
+<meta property="og:image" content="https://znzuishuai.github.io/blog/image/image-20250114185159465.png">
+<meta property="og:image" content="c:\Users\1\AppData\Roaming\Typora\typora-user-images\image-20250114185213672.png">
+<meta property="og:image" content="https://znzuishuai.github.io/blog/image/image-20250114185213672.png">
+<meta property="og:image" content="https://znzuishuai.github.io/blog/image/image-20250114185715385.png">
+<meta property="og:image" content="https://znzuishuai.github.io/blog/image/image-20250114185916939.png">
+<meta property="og:image" content="https://znzuishuai.github.io/blog/image/image-20250114190004486.png">
+<meta property="og:image" content="https://znzuishuai.github.io/blog/image/image-20250114191347464.png">
+<meta property="og:image" content="https://znzuishuai.github.io/blog/image/image-20250114191500506.png">
+<meta property="article:published_time" content="2025-01-16T07:35:41.000Z">
+<meta property="article:modified_time" content="2025-01-16T07:51:33.408Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://znzuishuai.github.io/blog/image/12.png">
+<meta name="twitter:image" content="c:\Users\1\AppData\Roaming\Typora\typora-user-images\image-20250113220803960.png">
   
   
   
-  <title>1.13题 - Hexo</title>
+  <title>1.14题 - Hexo</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -208,7 +240,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="1.13题"></span>
+            <span id="subtitle" data-typed-text="1.14题"></span>
           
         </div>
 
@@ -219,7 +251,7 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-01-16 14:41" pubdate>
+        <time datetime="2025-01-16 15:35" pubdate>
           2025年1月16日 下午
         </time>
       </span>
@@ -231,7 +263,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          209 字
+          430 字
         
       </span>
     
@@ -242,7 +274,7 @@
         
         
         
-          2 分钟
+          4 分钟
         
       </span>
     
@@ -279,30 +311,86 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">1.13题</h1>
+            <h1 id="seo-header">1.14题</h1>
             
             
               <div class="markdown-body">
                 
-                <p>攻击的协议在防火墙上面</p>
-<p><img src="/blog/image/12.png" srcset="/blog/img/loading.gif" lazyload alt="12"></p>
-<p>棱角</p>
-<h1 id="内网"><a href="#内网" class="headerlink" title="内网"></a>内网</h1><p>内网(a,b,c)可以主动<img src="/blog/image/13.png" srcset="/blog/img/loading.gif" lazyload alt="13">找外网，但是外网不能主动找内网,外网只能找到那个圈那里</p>
-<h2 id="nc的作用"><a href="#nc的作用" class="headerlink" title="nc的作用"></a>nc的作用</h2><p><img src="/blog/image/14.png" srcset="/blog/img/loading.gif" lazyload alt="14"></p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_40647372/article/details/132730351">Linux命令200例：nc非常有用的网络工具（常用）_nc命令-CSDN博客</a></p>
-<h1 id="正反向问题"><a href="#正反向问题" class="headerlink" title="正反向问题"></a>正反向问题</h1><p>防火墙，入站严格，出站宽松</p>
-<p>当防火墙打开时，尽可能让对方出来找我们</p>
-<p>正反向指的是以谁为基本，对方写的东西来找我们，从他们的角度是正向，从我们的角度是反向</p>
-<p>-FOfa</p>
-<p>linux命令和cmd命令</p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_51631278/article/details/123238981">关于cmd命令和Linux命令之间的区别差异_linux和cmd的区别-CSDN博客</a></p>
-<h1 id="文件下载"><a href="#文件下载" class="headerlink" title="文件下载"></a>文件下载</h1><p><img src="/blog/image/image-20250113185800931.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250113185800931"></p>
-<p><img src="/blog/image/image-20250113185904393.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250113185904393"></p>
-<p><img src="/blog/image/image-20250113185946169.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250113185946169"></p>
-<p><img src="/blog/image/image-20250113190002408.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250113190002408"></p>
-<p><img src="/blog/image/image-20250113190031944.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250113190031944"></p>
-<h1 id="反弹shell"><a href="#反弹shell" class="headerlink" title="反弹shell"></a>反弹shell</h1><p>回旋，就是会告诉我们成没成功</p>
-<p>在有的情况下没有回旋，就要用到这个</p>
+                <h1 id="一"><a href="#一" class="headerlink" title="一"></a>一<img src="C:\Users\1\AppData\Roaming\Typora\typora-user-images\image-20250113220803960.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250113220803960"></h1><p>感觉是答案和admin有关</p>
+<p><img src="/blog/image/15.png" srcset="/blog/img/loading.gif" lazyload alt="15"></p>
+<p>有个admin，only可能是1</p>
+<p><img src="/blog/image/image-20250113221334435.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250113221334435"></p>
+<p>ctfhub{8ebefd0acf262a9ec4e56899}</p>
+<h1 id="二"><a href="#二" class="headerlink" title="二"></a>二</h1><p><img src="/blog/image/image-20250113223353159.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250113223353159"></p>
+<p>先抓包</p>
+<p><img src="/blog/image/image-20250113223516767.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250113223516767"></p>
+<p><img src="/blog/image/image-20250113223555832.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250113223555832"></p>
+<p>没有显示，诱人的give me flag 点击他！</p>
+<p><img src="/blog/image/image-20250113223903668.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250113223903668"></p>
+<p>传给repeater</p>
+<p><img src="/blog/image/image-20250113223934500.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250113223934500"></p>
+<p>ctfhub{ccdc59dd621497d091d70348}</p>
+<h1 id="三"><a href="#三" class="headerlink" title="三"></a>三</h1><p>先抓包</p>
+<p><img src="C:\Users\1\AppData\Roaming\Typora\typora-user-images\image-20250113214639085.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250113214639085"></p>
+<p><img src="C:\Users\1\AppData\Roaming\Typora\typora-user-images\image-20250113214744762.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250113214744762"></p>
+<p>放行是这个，说GET不行，用CTFHUB</p>
+<p><img src="C:\Users\1\AppData\Roaming\Typora\typora-user-images\image-20250113214849184.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250113214849184"></p>
+<h1 id="四"><a href="#四" class="headerlink" title="四"></a>四</h1><p><img src="/blog/image/image-20250114160514796.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250114160514796"></p>
+<p><img src="C:\Users\1\AppData\Roaming\Typora\typora-user-images\image-20250114160600036.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250114160600036"></p>
+<p>要解密这个，抓包看看</p>
+<p><img src="/blog/image/image-20250114160600036.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250114160600036"></p>
+<p><img src="/blog/image/image-20250114162325436.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250114162325436"></p>
+<p>爆破，账户是admin,密码是附件</p>
+<p><img src="/blog/image/image-20250114163630166.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250114163630166"></p>
+<p>将附件都弄成这样的形式（自己输入的账户和密码，解码的样子）</p>
+<p>给到，Intruder爆破，</p>
+<p>选好这个，ADD一下<img src="/blog/image/image-20250114172116276.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250114172116276"></p>
+<p><img src="/blog/image/image-20250114172139329.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250114172139329"></p>
+<p>选好文件，加个前缀，编码方式</p>
+<p>ctfhub{4ee900d7609f99d4948ccb39}</p>
+<p>选200的，再看response</p>
+<p><img src="/blog/image/image-20250114172139329.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250114172139329"></p>
+<h1 id="五"><a href="#五" class="headerlink" title="五"></a>五</h1><p><img src="/blog/image/image-20250114172902100.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250114172902100"></p>
+<p>响应包源代码，我觉得可以直接检查，看她的源代码</p>
+<p><img src="C:\Users\1\AppData\Roaming\Typora\typora-user-images\image-20250114172947684.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250114172947684"></p>
+<p> ctfhub{e728fd8a5b714b3fe0a44a6c} </p>
+<h1 id="六"><a href="#六" class="headerlink" title="六"></a>六</h1><p>挨个目录<img src="/blog/image/image-20250114173700384.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250114173700384">找（点开之后长得都一样，但是大标题会变，英语看不懂）</p>
+<p><img src="/blog/image/image-20250114173935555.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250114173935555"></p>
+<p><img src="/blog/image/image-20250114173952622.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250114173952622"></p>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">ctfhub</span>&#123;<span class="hljs-number">1433</span>c68ae0cec09d350f1eba&#125;<br></code></pre></td></tr></table></figure>
+
+<h1 id="七"><a href="#七" class="headerlink" title="七"></a>七</h1><p><img src="/blog/image/image-20250114174204603.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250114174204603"></p>
+<p>东西有点多，感觉应该可以查找，试试看</p>
+<p><img src="/blog/image/image-20250114174341067.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250114174341067"></p>
+<p><img src="/blog/image/image-20250114174418421.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250114174418421"></p>
+<h1 id="八"><a href="#八" class="headerlink" title="八"></a>八</h1><p><img src="/blog/image/image-20250114182720640.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250114182720640"></p>
+<p><img src="/blog/image/image-20250114182744342.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250114182744342"></p>
+<p>放到bp中挨个试，将文件名放在第一个，后缀在processing中add，还有个点</p>
+<p><img src="/blog/image/image-20250114182819584.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250114182819584"></p>
+<p>将这个RAW 复制到proxy中，打开浏览器是个文件太好了！</p>
+<p><img src="/blog/image/image-20250114183906999.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250114183906999"></p>
+<p>但是不好的是，点开这个flag是where is flag??(我真的崩溃了)（我从网上查找资料，说txt，也可以当作网站似的）<a target="_blank" rel="noopener" href="http://challenge-56afe07f92cccdad.sandbox.ctfhub.com:10800/flag_263712747.txt%E6%89%93%E5%BC%80%E8%BF%99%E4%B8%AA%E7%BD%91%E7%AB%99%E5%BE%97%E5%88%B0">http://challenge-56afe07f92cccdad.sandbox.ctfhub.com:10800/flag_263712747.txt打开这个网站得到</a></p>
+<p><img src="/blog/image/image-20250114184610094.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250114184610094"></p>
+<h1 id="九"><a href="#九" class="headerlink" title="九"></a>九</h1><p><img src="/blog/image/image-20250114185159465.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250114185159465"></p>
+<p><img src="C:\Users\1\AppData\Roaming\Typora\typora-user-images\image-20250114185213672.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250114185213672"></p>
+<p>大概率是提示吧，什么在index.php里面</p>
+<p>抓包试试</p>
+<p><img src="/blog/image/image-20250114185213672.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250114185213672"></p>
+<p>结合一下上个题的经验，改一下，HTTp试试</p>
+<p><img src="/blog/image/image-20250114185715385.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250114185715385"></p>
+<p>不行，题目是bak（投机取巧一下），在原链接后面加上&#x2F;index.php.bak试试</p>
+<p><img src="/blog/image/image-20250114185916939.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250114185916939"></p>
+<p>芜湖，看起来有救了</p>
+<p><img src="/blog/image/image-20250114190004486.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250114190004486"></p>
+<p>可以，把它放到文本文件里，拿下！</p>
+<p>ctfhub{046a33d8e1d4bd024c25dc4e}</p>
+<h1 id="十"><a href="#十" class="headerlink" title="十"></a>十</h1><p>不知道什么是vim编辑器，题目上说会异常关闭但是会有缓存</p>
+<p>从网上查了</p>
+<p><img src="/blog/image/image-20250114191347464.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250114191347464"></p>
+<p>用刚刚的方式试一下</p>
+<p><img src="/blog/image/image-20250114191500506.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250114191500506"></p>
+<p>得到</p>
+<p>ctfhub{3a1ba77e788214e7776c67ef}</p>
 
                 
               </div>
@@ -320,8 +408,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>1.13题</div>
-      <div>https://znzuishuai.github.io/blog/2025/01/16/1-13题/</div>
+      <div>1.14题</div>
+      <div>https://znzuishuai.github.io/blog/2025/01/16/1-14题/</div>
     </div>
     <div class="license-meta">
       
@@ -365,18 +453,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/blog/2025/01/16/1-14%E9%A2%98/" title="1.14题">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">1.14题</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/blog/2025/01/16/1-13/" title="1-13">
-                        <span class="hidden-mobile">1-13</span>
+                      <a href="/blog/2025/01/16/1-13%E9%A2%98/" title="1.13题">
+                        <span class="hidden-mobile">1.13题</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
