@@ -4,6 +4,19 @@
   
   
   <entry>
+    <title>1.13题</title>
+    <link href="/blog/2025/01/16/1-13%E9%A2%98/"/>
+    <url>/blog/2025/01/16/1-13%E9%A2%98/</url>
+    
+    <content type="html"><![CDATA[<p>攻击的协议在防火墙上面</p><p><img src="/blog/image/12.png" alt="12"></p><p>棱角</p><h1 id="内网"><a href="#内网" class="headerlink" title="内网"></a>内网</h1><p>内网(a,b,c)可以主动<img src="/blog/image/13.png" alt="13">找外网，但是外网不能主动找内网,外网只能找到那个圈那里</p><h2 id="nc的作用"><a href="#nc的作用" class="headerlink" title="nc的作用"></a>nc的作用</h2><p><img src="/blog/image/14.png" alt="14"></p><p><a href="https://blog.csdn.net/qq_40647372/article/details/132730351">Linux命令200例：nc非常有用的网络工具（常用）_nc命令-CSDN博客</a></p><h1 id="正反向问题"><a href="#正反向问题" class="headerlink" title="正反向问题"></a>正反向问题</h1><p>防火墙，入站严格，出站宽松</p><p>当防火墙打开时，尽可能让对方出来找我们</p><p>正反向指的是以谁为基本，对方写的东西来找我们，从他们的角度是正向，从我们的角度是反向</p><p>-FOfa</p><p>linux命令和cmd命令</p><p><a href="https://blog.csdn.net/weixin_51631278/article/details/123238981">关于cmd命令和Linux命令之间的区别差异_linux和cmd的区别-CSDN博客</a></p><h1 id="文件下载"><a href="#文件下载" class="headerlink" title="文件下载"></a>文件下载</h1><p><img src="/blog/image/image-20250113185800931.png" alt="image-20250113185800931"></p><p><img src="/blog/image/image-20250113185904393.png" alt="image-20250113185904393"></p><p><img src="/blog/image/image-20250113185946169.png" alt="image-20250113185946169"></p><p><img src="/blog/image/image-20250113190002408.png" alt="image-20250113190002408"></p><p><img src="/blog/image/image-20250113190031944.png" alt="image-20250113190031944"></p><h1 id="反弹shell"><a href="#反弹shell" class="headerlink" title="反弹shell"></a>反弹shell</h1><p>回旋，就是会告诉我们成没成功</p><p>在有的情况下没有回旋，就要用到这个</p>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>1-13</title>
     <link href="/blog/2025/01/16/1-13/"/>
     <url>/blog/2025/01/16/1-13/</url>
