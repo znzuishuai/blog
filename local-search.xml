@@ -4,6 +4,19 @@
   
   
   <entry>
+    <title>1-13</title>
+    <link href="/blog/2025/01/16/1-13/"/>
+    <url>/blog/2025/01/16/1-13/</url>
+    
+    <content type="html"><![CDATA[<h1 id="Proxy-代理"><a href="#Proxy-代理" class="headerlink" title="Proxy(代理)"></a>Proxy(代理)</h1><p>用来抓包</p><p><img src="/blog/image/1.png" alt="1"></p><p>1.open browser</p><p>输入个网<img src="/blog/image/2.png" alt="2">址</p><p>2.intercept is on &#x2F;off</p><p>拦截的作用</p><p><img src="/blog/image/3.png" alt="3"></p><p>3.forward放包（放行），drop丢包，action操作</p><h1 id="Intruder"><a href="#Intruder" class="headerlink" title="Intruder"></a>Intruder</h1><p>对数据包进行批量处理</p><p><img src="C:\Users\1\AppData\Roaming\Typora\typora-user-images\image-20250113211258551.png" alt="image-20250113211258551"></p><h1 id="repeater"><a href="#repeater" class="headerlink" title="repeater"></a>repeater</h1><p>和Intruder差不多，但是一次只能改一个</p><h1 id="工作原理"><a href="#工作原理" class="headerlink" title="工作原理"></a>工作原理</h1><h2 id="http协议"><a href="#http协议" class="headerlink" title="http协议"></a>http协议</h2><p>超文本传输协议（web浏览器和web服务器的通信的东西）</p><p><img src="C:\Users\1\AppData\Roaming\Typora\typora-user-images\image-20250113212602091.png" alt="image-20250113212602091"></p><p><img src="C:\Users\1\AppData\Roaming\Typora\typora-user-images\image-20250113213606311.png" alt="image-20250113213606311"></p><p><img src="C:\Users\1\AppData\Roaming\Typora\typora-user-images\image-20250113213619388.png" alt="image-20250113213619388"></p><h1 id="例题"><a href="#例题" class="headerlink" title="例题"></a>例题</h1><p><img src="C:\Users\1\AppData\Roaming\Typora\typora-user-images\image-20250113214712292.png" alt="image-20250113214712292"></p><p>先抓包</p><p><img src="C:\Users\1\AppData\Roaming\Typora\typora-user-images\image-20250113214639085.png" alt="image-20250113214639085"></p><p><img src="C:\Users\1\AppData\Roaming\Typora\typora-user-images\image-20250113214744762.png" alt="image-20250113214744762"></p><p>放行是这个，说GET不行，用CTFHUB</p><p><img src="C:\Users\1\AppData\Roaming\Typora\typora-user-images\image-20250113214849184.png" alt="image-20250113214849184"></p><p><img src="C:\Users\1\AppData\Roaming\Typora\typora-user-images\image-20250113215029010.png" alt="image-20250113215029010"></p>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>test</title>
     <link href="/blog/2025/01/16/test/"/>
     <url>/blog/2025/01/16/test/</url>
