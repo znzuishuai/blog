@@ -1,0 +1,746 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/blog/img/fluid.png">
+  <link rel="icon" href="/blog/img/fluid.png">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="一感觉是答案和admin有关  有个admin，only可能是1  ctfhub{8ebefd0acf262a9ec4e56899}  二 先抓包   没有显示，诱人的give me flag 点击他！  传给repeater  ctfhub{ccdc59dd621497d091d70348}  三先抓包   放行是这个，说GET不行，用CTFHUB   四  要解密这个，抓包看看   爆破，账户">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="https://znzuishuai.github.io/blog/2025/01/14/1.14%E9%A2%98/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="一感觉是答案和admin有关  有个admin，only可能是1  ctfhub{8ebefd0acf262a9ec4e56899}  二 先抓包   没有显示，诱人的give me flag 点击他！  传给repeater  ctfhub{ccdc59dd621497d091d70348}  三先抓包   放行是这个，说GET不行，用CTFHUB   四  要解密这个，抓包看看   爆破，账户">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="c:\Users\1\AppData\Roaming\Typora\typora-user-images\image-20250113220803960.png">
+<meta property="og:image" content="c:\Users\1\AppData\Roaming\Typora\typora-user-images\image-20250113221235078.png">
+<meta property="og:image" content="c:\Users\1\AppData\Roaming\Typora\typora-user-images\image-20250113221334435.png">
+<meta property="og:image" content="c:\Users\1\AppData\Roaming\Typora\typora-user-images\image-20250113221453092.png">
+<meta property="og:image" content="c:\Users\1\AppData\Roaming\Typora\typora-user-images\image-20250113223353159.png">
+<meta property="og:image" content="c:\Users\1\AppData\Roaming\Typora\typora-user-images\image-20250113223516767.png">
+<meta property="og:image" content="c:\Users\1\AppData\Roaming\Typora\typora-user-images\image-20250113223555832.png">
+<meta property="og:image" content="c:\Users\1\AppData\Roaming\Typora\typora-user-images\image-20250113223903668.png">
+<meta property="og:image" content="c:\Users\1\AppData\Roaming\Typora\typora-user-images\image-20250113223934500.png">
+<meta property="og:image" content="c:\Users\1\AppData\Roaming\Typora\typora-user-images\image-20250113224003652.png">
+<meta property="og:image" content="c:\Users\1\AppData\Roaming\Typora\typora-user-images\image-20250113214639085.png">
+<meta property="og:image" content="c:\Users\1\AppData\Roaming\Typora\typora-user-images\image-20250113214744762.png">
+<meta property="og:image" content="c:\Users\1\AppData\Roaming\Typora\typora-user-images\image-20250113214849184.png">
+<meta property="og:image" content="c:\Users\1\AppData\Roaming\Typora\typora-user-images\image-20250113215029010.png">
+<meta property="og:image" content="c:\Users\1\AppData\Roaming\Typora\typora-user-images\image-20250114160514796.png">
+<meta property="og:image" content="c:\Users\1\AppData\Roaming\Typora\typora-user-images\image-20250114160600036.png">
+<meta property="og:image" content="c:\Users\1\AppData\Roaming\Typora\typora-user-images\image-20250114162325436.png">
+<meta property="og:image" content="c:\Users\1\AppData\Roaming\Typora\typora-user-images\image-20250114162517627.png">
+<meta property="og:image" content="c:\Users\1\AppData\Roaming\Typora\typora-user-images\image-20250114163630166.png">
+<meta property="og:image" content="c:\Users\1\AppData\Roaming\Typora\typora-user-images\image-20250114172303702.png">
+<meta property="og:image" content="c:\Users\1\AppData\Roaming\Typora\typora-user-images\image-20250114172351904.png">
+<meta property="og:image" content="c:\Users\1\AppData\Roaming\Typora\typora-user-images\image-20250114172116276.png">
+<meta property="og:image" content="c:\Users\1\AppData\Roaming\Typora\typora-user-images\image-20250114172139329.png">
+<meta property="og:image" content="c:\Users\1\AppData\Roaming\Typora\typora-user-images\image-20250114172902100.png">
+<meta property="og:image" content="c:\Users\1\AppData\Roaming\Typora\typora-user-images\image-20250114172947684.png">
+<meta property="og:image" content="c:\Users\1\AppData\Roaming\Typora\typora-user-images\image-20250114173108992.png">
+<meta property="og:image" content="c:\Users\1\AppData\Roaming\Typora\typora-user-images\image-20250114173700384.png">
+<meta property="og:image" content="c:\Users\1\AppData\Roaming\Typora\typora-user-images\image-20250114173935555.png">
+<meta property="og:image" content="c:\Users\1\AppData\Roaming\Typora\typora-user-images\image-20250114173952622.png">
+<meta property="og:image" content="c:\Users\1\AppData\Roaming\Typora\typora-user-images\image-20250114174204603.png">
+<meta property="og:image" content="c:\Users\1\AppData\Roaming\Typora\typora-user-images\image-20250114174341067.png">
+<meta property="og:image" content="c:\Users\1\AppData\Roaming\Typora\typora-user-images\image-20250114174418421.png">
+<meta property="og:image" content="c:\Users\1\AppData\Roaming\Typora\typora-user-images\image-20250114182720640.png">
+<meta property="og:image" content="c:\Users\1\AppData\Roaming\Typora\typora-user-images\image-20250114182744342.png">
+<meta property="og:image" content="c:\Users\1\AppData\Roaming\Typora\typora-user-images\image-20250114182819584.png">
+<meta property="og:image" content="c:\Users\1\AppData\Roaming\Typora\typora-user-images\image-20250114183906999.png">
+<meta property="og:image" content="c:\Users\1\AppData\Roaming\Typora\typora-user-images\image-20250114184610094.png">
+<meta property="og:image" content="c:\Users\1\AppData\Roaming\Typora\typora-user-images\image-20250114185159465.png">
+<meta property="og:image" content="c:\Users\1\AppData\Roaming\Typora\typora-user-images\image-20250114185213672.png">
+<meta property="og:image" content="c:\Users\1\AppData\Roaming\Typora\typora-user-images\image-20250114185715385.png">
+<meta property="og:image" content="c:\Users\1\AppData\Roaming\Typora\typora-user-images\image-20250114185824385.png">
+<meta property="og:image" content="c:\Users\1\AppData\Roaming\Typora\typora-user-images\image-20250114185916939.png">
+<meta property="og:image" content="c:\Users\1\AppData\Roaming\Typora\typora-user-images\image-20250114190004486.png">
+<meta property="og:image" content="c:\Users\1\AppData\Roaming\Typora\typora-user-images\image-20250114191347464.png">
+<meta property="og:image" content="c:\Users\1\AppData\Roaming\Typora\typora-user-images\image-20250114191500506.png">
+<meta property="article:published_time" content="2025-01-14T11:15:38.109Z">
+<meta property="article:modified_time" content="2025-01-14T11:15:38.109Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="c:\Users\1\AppData\Roaming\Typora\typora-user-images\image-20250113220803960.png">
+  
+  
+  
+  <title>Hexo</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/blog/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/blog/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/blog/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"znzuishuai.github.io","root":"/blog/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/blog/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/blog/js/utils.js" ></script>
+  <script  src="/blog/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/blog/">
+      <strong>Fluid</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/blog/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/blog/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/blog/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/blog/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/blog/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/blog/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text=""></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2025-01-14 19:15" pubdate>
+          2025年1月14日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          433 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          4 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header"></h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="一"><a href="#一" class="headerlink" title="一"></a>一<img src="C:\Users\1\AppData\Roaming\Typora\typora-user-images\image-20250113220803960.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250113220803960"></h1><p>感觉是答案和admin有关</p>
+<p><img src="C:\Users\1\AppData\Roaming\Typora\typora-user-images\image-20250113221235078.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250113221235078"></p>
+<p>有个admin，only可能是1</p>
+<p><img src="C:\Users\1\AppData\Roaming\Typora\typora-user-images\image-20250113221334435.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250113221334435"></p>
+<p>ctfhub{8ebefd0acf262a9ec4e56899}</p>
+<p><img src="C:\Users\1\AppData\Roaming\Typora\typora-user-images\image-20250113221453092.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250113221453092"></p>
+<h1 id="二"><a href="#二" class="headerlink" title="二"></a>二</h1><p><img src="C:\Users\1\AppData\Roaming\Typora\typora-user-images\image-20250113223353159.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250113223353159"></p>
+<p>先抓包</p>
+<p><img src="C:\Users\1\AppData\Roaming\Typora\typora-user-images\image-20250113223516767.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250113223516767"></p>
+<p><img src="C:\Users\1\AppData\Roaming\Typora\typora-user-images\image-20250113223555832.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250113223555832"></p>
+<p>没有显示，诱人的give me flag 点击他！</p>
+<p><img src="C:\Users\1\AppData\Roaming\Typora\typora-user-images\image-20250113223903668.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250113223903668"></p>
+<p>传给repeater</p>
+<p><img src="C:\Users\1\AppData\Roaming\Typora\typora-user-images\image-20250113223934500.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250113223934500"></p>
+<p>ctfhub{ccdc59dd621497d091d70348}</p>
+<p><img src="C:\Users\1\AppData\Roaming\Typora\typora-user-images\image-20250113224003652.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250113224003652"></p>
+<h1 id="三"><a href="#三" class="headerlink" title="三"></a>三</h1><p>先抓包</p>
+<p><img src="C:\Users\1\AppData\Roaming\Typora\typora-user-images\image-20250113214639085.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250113214639085"></p>
+<p><img src="C:\Users\1\AppData\Roaming\Typora\typora-user-images\image-20250113214744762.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250113214744762"></p>
+<p>放行是这个，说GET不行，用CTFHUB</p>
+<p><img src="C:\Users\1\AppData\Roaming\Typora\typora-user-images\image-20250113214849184.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250113214849184"></p>
+<p><img src="C:\Users\1\AppData\Roaming\Typora\typora-user-images\image-20250113215029010.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250113215029010"></p>
+<h1 id="四"><a href="#四" class="headerlink" title="四"></a>四</h1><p><img src="C:\Users\1\AppData\Roaming\Typora\typora-user-images\image-20250114160514796.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250114160514796"></p>
+<p><img src="C:\Users\1\AppData\Roaming\Typora\typora-user-images\image-20250114160600036.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250114160600036"></p>
+<p>要解密这个，抓包看看</p>
+<p><img src="C:\Users\1\AppData\Roaming\Typora\typora-user-images\image-20250114162325436.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250114162325436"></p>
+<p><img src="C:\Users\1\AppData\Roaming\Typora\typora-user-images\image-20250114162517627.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250114162517627"></p>
+<p>爆破，账户是admin,密码是附件</p>
+<p><img src="C:\Users\1\AppData\Roaming\Typora\typora-user-images\image-20250114163630166.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250114163630166"></p>
+<p>将附件都弄成这样的形式（自己输入的账户和密码，解码的样子）</p>
+<p>给到，Intruder爆破，</p>
+<p>选好这个，ADD一下<img src="C:\Users\1\AppData\Roaming\Typora\typora-user-images\image-20250114172303702.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250114172303702"></p>
+<p><img src="C:\Users\1\AppData\Roaming\Typora\typora-user-images\image-20250114172351904.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250114172351904"></p>
+<p>选好文件，加个前缀，编码方式</p>
+<p><img src="C:\Users\1\AppData\Roaming\Typora\typora-user-images\image-20250114172116276.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250114172116276"></p>
+<p>ctfhub{4ee900d7609f99d4948ccb39}</p>
+<p>选200的，再看response</p>
+<p><img src="C:\Users\1\AppData\Roaming\Typora\typora-user-images\image-20250114172139329.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250114172139329"></p>
+<h1 id="五"><a href="#五" class="headerlink" title="五"></a>五</h1><p><img src="C:\Users\1\AppData\Roaming\Typora\typora-user-images\image-20250114172902100.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250114172902100"></p>
+<p>响应包源代码，我觉得可以直接检查，看她的源代码</p>
+<p><img src="C:\Users\1\AppData\Roaming\Typora\typora-user-images\image-20250114172947684.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250114172947684"></p>
+<p> ctfhub{e728fd8a5b714b3fe0a44a6c} </p>
+<p><img src="C:\Users\1\AppData\Roaming\Typora\typora-user-images\image-20250114173108992.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250114173108992"></p>
+<h1 id="六"><a href="#六" class="headerlink" title="六"></a>六</h1><p><img src="C:\Users\1\AppData\Roaming\Typora\typora-user-images\image-20250114173700384.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250114173700384"></p>
+<p>挨个目录找（点开之后长得都一样，但是大标题会变，英语看不懂）</p>
+<p><img src="C:\Users\1\AppData\Roaming\Typora\typora-user-images\image-20250114173935555.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250114173935555"></p>
+<p><img src="C:\Users\1\AppData\Roaming\Typora\typora-user-images\image-20250114173952622.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250114173952622"></p>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">ctfhub</span>&#123;<span class="hljs-number">1433</span>c68ae0cec09d350f1eba&#125;<br></code></pre></td></tr></table></figure>
+
+<h1 id="七"><a href="#七" class="headerlink" title="七"></a>七</h1><p><img src="C:\Users\1\AppData\Roaming\Typora\typora-user-images\image-20250114174204603.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250114174204603"></p>
+<p>东西有点多，感觉应该可以查找，试试看</p>
+<p><img src="C:\Users\1\AppData\Roaming\Typora\typora-user-images\image-20250114174341067.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250114174341067"></p>
+<p>找到了！</p>
+<p><img src="C:\Users\1\AppData\Roaming\Typora\typora-user-images\image-20250114174418421.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250114174418421"></p>
+<h1 id="八"><a href="#八" class="headerlink" title="八"></a>八</h1><p><img src="C:\Users\1\AppData\Roaming\Typora\typora-user-images\image-20250114182720640.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250114182720640"></p>
+<p><img src="C:\Users\1\AppData\Roaming\Typora\typora-user-images\image-20250114182744342.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250114182744342"></p>
+<p>放到bp中挨个试，将文件名放在第一个，后缀在processing中add，还有个点</p>
+<p><img src="C:\Users\1\AppData\Roaming\Typora\typora-user-images\image-20250114182819584.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250114182819584"></p>
+<p>将这个RAW 复制到proxy中，打开浏览器是个文件太好了！</p>
+<p><img src="C:\Users\1\AppData\Roaming\Typora\typora-user-images\image-20250114183906999.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250114183906999"></p>
+<p>但是不好的是，点开这个flag是where is flag??(我真的崩溃了)（我从网上查找资料，说txt，也可以当作网站似的）<a target="_blank" rel="noopener" href="http://challenge-56afe07f92cccdad.sandbox.ctfhub.com:10800/flag_263712747.txt%E6%89%93%E5%BC%80%E8%BF%99%E4%B8%AA%E7%BD%91%E7%AB%99%E5%BE%97%E5%88%B0">http://challenge-56afe07f92cccdad.sandbox.ctfhub.com:10800/flag_263712747.txt打开这个网站得到</a></p>
+<p><img src="C:\Users\1\AppData\Roaming\Typora\typora-user-images\image-20250114184610094.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250114184610094"></p>
+<h1 id="九"><a href="#九" class="headerlink" title="九"></a>九</h1><p><img src="C:\Users\1\AppData\Roaming\Typora\typora-user-images\image-20250114185159465.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250114185159465"></p>
+<p><img src="C:\Users\1\AppData\Roaming\Typora\typora-user-images\image-20250114185213672.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250114185213672"></p>
+<p>大概率是提示吧，什么在index.php里面</p>
+<p>抓包试试</p>
+<p><img src="C:\Users\1\AppData\Roaming\Typora\typora-user-images\image-20250114185715385.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250114185715385"></p>
+<p>结合一下上个题的经验，改一下，HTTp试试</p>
+<p><img src="C:\Users\1\AppData\Roaming\Typora\typora-user-images\image-20250114185824385.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250114185824385"></p>
+<p>不行，题目是bak（投机取巧一下），在原链接后面加上&#x2F;index.php.bak试试</p>
+<p><img src="C:\Users\1\AppData\Roaming\Typora\typora-user-images\image-20250114185916939.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250114185916939"></p>
+<p>芜湖，看起来有救了</p>
+<p><img src="C:\Users\1\AppData\Roaming\Typora\typora-user-images\image-20250114190004486.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250114190004486"></p>
+<p>可以，把它放到文本文件里，拿下！</p>
+<p>ctfhub{046a33d8e1d4bd024c25dc4e}</p>
+<h1 id="十"><a href="#十" class="headerlink" title="十"></a>十</h1><p>不知道什么是vim编辑器，题目上说会异常关闭但是会有缓存</p>
+<p>从网上查了</p>
+<p><img src="C:\Users\1\AppData\Roaming\Typora\typora-user-images\image-20250114191347464.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250114191347464"></p>
+<p>用刚刚的方式试一下</p>
+<p><img src="C:\Users\1\AppData\Roaming\Typora\typora-user-images\image-20250114191500506.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250114191500506"></p>
+<p>得到</p>
+<p>ctfhub{3a1ba77e788214e7776c67ef}</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div></div>
+      <div>https://znzuishuai.github.io/blog/2025/01/14/1.14题/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>John Doe</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2025年1月14日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/blog/2025/01/14/1.14/" title="">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile"></span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/blog/2025/01/13/1.13bp/" title="">
+                        <span class="hidden-mobile"></span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/blog/js/events.js" ></script>
+<script  src="/blog/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/blog/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/blog/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/blog/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
