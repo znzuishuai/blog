@@ -5,6 +5,19 @@
   
   <entry>
     <title></title>
+    <link href="/blog/2025/01/16/1.15%E7%AC%94%E8%AE%B0/"/>
+    <url>/blog/2025/01/16/1.15%E7%AC%94%E8%AE%B0/</url>
+    
+    <content type="html"><![CDATA[<p>封包监听工具</p><h1 id="非web协议"><a href="#非web协议" class="headerlink" title="非web协议"></a>非web协议</h1><p>抓不到，用wireshark或者科来网络分析系统（新手）</p><h1 id="设置代理"><a href="#设置代理" class="headerlink" title="设置代理"></a>设置代理</h1><p>网络</p><p><img src="C:\Users\1\AppData\Roaming\Typora\typora-user-images\image-20250116124039382.png" alt="image-20250116124039382"></p><p>设置好代理，才能抓包好</p><p>抓包游戏</p><p>用科来抓包</p><h1 id="1-1抓包技术应用意义"><a href="#1-1抓包技术应用意义" class="headerlink" title="1.1抓包技术应用意义"></a>1.1抓包技术应用意义</h1><p>有些应用是看不到的</p><h1 id="1-2抓包技术应用对象"><a href="#1-2抓包技术应用对象" class="headerlink" title="1.2抓包技术应用对象"></a>1.2抓包技术应用对象</h1><p>手机app、微信小程序、PC应用</p><h1 id="1-3抓包技术应用协议"><a href="#1-3抓包技术应用协议" class="headerlink" title="1.3抓包技术应用协议"></a>1.3抓包技术应用协议</h1><h1 id="1-4抓包技术应用支持"><a href="#1-4抓包技术应用支持" class="headerlink" title="1.4抓包技术应用支持"></a>1.4抓包技术应用支持</h1><p>Windows、Linux</p><h1 id="2-1-1抓包封包工具"><a href="#2-1-1抓包封包工具" class="headerlink" title="2.1.1抓包封包工具"></a>2.1.1抓包封包工具</h1><h2 id="Fiddler："><a href="#Fiddler：" class="headerlink" title="Fiddler："></a>Fiddler：</h2><p>是一个 http 协议调试代理工具，它能够记录并检查所有你的电脑和互联网之间的 http 通讯，设置断点，查看所有的“进出”Fiddler 的数据（指 cookie,html,js,css 等文件）。 Fiddler 要比其他的网络调试器要更加简单，因为它不仅仅暴露 http 通讯还提供了一个用户友好的格式。</p><h2 id="Charles（茶杯）："><a href="#Charles（茶杯）：" class="headerlink" title="Charles（茶杯）："></a>Charles（茶杯）：</h2><p>是一个 HTTP 代理服务器,HTTP 监视器,反转代理服务器，当浏览器连接 Charles 的代理访问互联网时，Charles 可以监控浏览器发送和接收的所有数据。它允许一个开发者查看所有连接互联网的 HTTP 通信，这些包括 request, response 和 HTTP headers （包含 cookies 与 caching 信息）。</p><h2 id="TCPDump："><a href="#TCPDump：" class="headerlink" title="TCPDump："></a>TCPDump：</h2><p>是可以将网络中传送的数据包完全截获下来提供分析。它支持针对网络层、协议、主机、网络或端口的过滤，并提供 and、or、not 等逻辑语句来帮助你去掉无用的信息。</p><h2 id="BurpSuite："><a href="#BurpSuite：" class="headerlink" title="BurpSuite："></a>BurpSuite：</h2><p>是用于攻击 web 应用程序的集成平台，包含了许多工具。Burp Suite 为这些工具设计了许多接口，以加快攻击应用程序的过程。所有工具都共享一个请求，并能处理对应的 HTTP 消息、持久性、认证、代理、日志、警报。</p><h2 id="Wireshark："><a href="#Wireshark：" class="headerlink" title="Wireshark："></a>Wireshark：</h2><p>是一个网络封包分析软件。网络封包分析软件的功能是截取网络封包，并尽可能显示出最为详细的网络封包资料。Wireshark 使用 WinPCAP 作为接口，直接与网卡进行数据报文交换。</p><h2 id="科来网络分析系统："><a href="#科来网络分析系统：" class="headerlink" title="科来网络分析系统："></a>科来网络分析系统：</h2><p>是一款由科来软件全自主研发，并拥有全部知识产品的网络分析产品。该系统具有行业领先的专家分析技术，通过捕获并分析网络中传输的底层数据包，对网络故障、网络安全</p><p>以及网络性能进行全面分析，从而快速排查网络中出现或潜在的故障、安全及性能问题。</p><h2 id="WPE-封包分析："><a href="#WPE-封包分析：" class="headerlink" title="WPE&amp;封包分析："></a>WPE&amp;封包分析：</h2><p>是强大的网络封包编辑器，wpe 可以截取网络上的信息，修改封包数据，是外挂制作的常用工具。一般在安全测试中可用来调试数据通讯地址</p><p>通过浏览器功能：浏览器右键“检查”</p><p>2.2APP&amp;小程序&amp;PC 抓包 HTTP&#x2F;S 数据-Charles&amp;Fiddler&amp;Burpsuite<br>app不走web协议，用科来和封包工具</p><p>Charles（茶杯）</p><p>安装证书<br>设置HTTP代理—&gt;运行工具的本机IP端口</p><p>BurpSuite:</p><p>点对点可以抓实时的，可以做安全测试</p><p>burpsuite 茶杯 fiddler 需要配置代理监听抓取</p><p>wireshark 科来 不需要配置任何东西</p><p>2.3程序进程&amp;网络接口&amp;其他协议抓包-WireShark&amp;科来网络分析系统<br>Wireshark：</p><p>选以太网，用筛选器</p><p>2.4通讯类应用封包分析发送接收-WPE 四件套封包&amp;科来网络分析系统<br><img src="C:\Users\1\AppData\Roaming\Typora\typora-user-images\image-20250116125213221.png" alt="image-20250116125213221"></p>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title></title>
     <link href="/blog/2025/01/16/1.15/"/>
     <url>/blog/2025/01/16/1.15/</url>
     
