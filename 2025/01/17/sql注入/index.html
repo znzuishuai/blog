@@ -19,21 +19,23 @@
   <meta name="author" content="John Doe">
   <meta name="keywords" content="">
   
-    <meta name="description" content="一识别算法编码类型：1.看位数 2.看密文的特征（数字，字幕，大小写，符号等） 3.看当前的密文存在的地方（web，数据库，操作系统等应用） #详细点：密码存储加密：MD5 SHA1 NTLM AES DES RC4 MD5是 32 或 16 位位由数字”0-9”和字母”a-f”所组成的字符串 不可逆 解密：枚举，碰撞  不直接通过算法解密，枚举 尝试生成很多的加密或者明文的字符去枚举 SHA1">
+    <meta name="description" content="sql注入原理原因：当web应用向后台数据库传递sql语句时进行数据库操作时，如果对用户输入的参数没有经过严格的过滤处理，那么攻击者就可以构造特殊的sql语句，直接输入数据库引擎执行，获取或修改数据库中的数据。 四个必须掌握的sql语句：增删改查 sql注入的目的查询数据 读写文件 执行命令 本质：把用户的输入数据当作代码执行 两个关键点：所有的漏洞都有条件：1.用户能够控制输入的内容 2.数据库">
 <meta property="og:type" content="article">
-<meta property="og:title" content="1.16">
-<meta property="og:url" content="https://znzuishuai.github.io/blog/2025/01/16/1-16/index.html">
+<meta property="og:title" content="sql注入">
+<meta property="og:url" content="https://znzuishuai.github.io/blog/2025/01/17/sql%E6%B3%A8%E5%85%A5/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="一识别算法编码类型：1.看位数 2.看密文的特征（数字，字幕，大小写，符号等） 3.看当前的密文存在的地方（web，数据库，操作系统等应用） #详细点：密码存储加密：MD5 SHA1 NTLM AES DES RC4 MD5是 32 或 16 位位由数字”0-9”和字母”a-f”所组成的字符串 不可逆 解密：枚举，碰撞  不直接通过算法解密，枚举 尝试生成很多的加密或者明文的字符去枚举 SHA1">
+<meta property="og:description" content="sql注入原理原因：当web应用向后台数据库传递sql语句时进行数据库操作时，如果对用户输入的参数没有经过严格的过滤处理，那么攻击者就可以构造特殊的sql语句，直接输入数据库引擎执行，获取或修改数据库中的数据。 四个必须掌握的sql语句：增删改查 sql注入的目的查询数据 读写文件 执行命令 本质：把用户的输入数据当作代码执行 两个关键点：所有的漏洞都有条件：1.用户能够控制输入的内容 2.数据库">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2025-01-16T13:25:44.000Z">
-<meta property="article:modified_time" content="2025-01-16T14:15:38.429Z">
+<meta property="og:image" content="c:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250117115321308.png">
+<meta property="article:published_time" content="2025-01-17T01:54:59.000Z">
+<meta property="article:modified_time" content="2025-01-17T07:44:26.310Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="c:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250117115321308.png">
   
   
   
-  <title>1.16 - Hexo</title>
+  <title>sql注入 - Hexo</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -199,7 +201,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="1.16"></span>
+            <span id="subtitle" data-typed-text="sql注入"></span>
           
         </div>
 
@@ -210,8 +212,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-01-16 21:25" pubdate>
-          2025年1月16日 晚上
+        <time datetime="2025-01-17 09:54" pubdate>
+          2025年1月17日 上午
         </time>
       </span>
     
@@ -222,7 +224,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          708 字
+          881 字
         
       </span>
     
@@ -233,7 +235,7 @@
         
         
         
-          6 分钟
+          8 分钟
         
       </span>
     
@@ -270,38 +272,67 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">1.16</h1>
+            <h1 id="seo-header">sql注入</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="一"><a href="#一" class="headerlink" title="一"></a>一</h1><h2 id="识别算法编码类型："><a href="#识别算法编码类型：" class="headerlink" title="识别算法编码类型："></a>识别算法编码类型：</h2><p>1.看位数</p>
-<p>2.看密文的特征（数字，字幕，大小写，符号等）</p>
-<p>3.看当前的密文存在的地方（web，数据库，操作系统等应用）</p>
-<p>#详细点：<br>密码存储加密：<br>MD5 SHA1 NTLM AES DES RC4</p>
-<h1 id="MD5"><a href="#MD5" class="headerlink" title="MD5"></a>MD5</h1><p>是 32 或 16 位位由数字”0-9”和字母”a-f”所组成的字符串</p>
-<p>不可逆</p>
-<p>解密：枚举，碰撞 </p>
-<p>不直接通过算法解密，枚举</p>
-<p>尝试生成很多的加密或者明文的字符去枚举</p>
-<h1 id="SHA1"><a href="#SHA1" class="headerlink" title="SHA1"></a>SHA1</h1><p> 这种加密的密文特征跟 MD5 差不多，只不过位数是 40</p>
-<h1 id="NTLM"><a href="#NTLM" class="headerlink" title="NTLM"></a>NTLM</h1><p>这种加密是 Windows 的哈希密码，标准通讯安全协议</p>
-<h1 id="AES-DES-RC4"><a href="#AES-DES-RC4" class="headerlink" title="AES,DES,RC4"></a>AES,DES,RC4</h1><p> 这些都是非对称性加密算法，引入密钥，密文特征与 Base64 类似<br>应用场景：各类应用密文，自定义算法，代码分析，CTF 安全比赛等</p>
-<h1 id="传输数据编码："><a href="#传输数据编码：" class="headerlink" title="传输数据编码："></a>传输数据编码：</h1><h1 id="BASE64-URL-HEX-ASCII"><a href="#BASE64-URL-HEX-ASCII" class="headerlink" title="BASE64 URL HEX ASCII"></a>BASE64 URL HEX ASCII</h1><h2 id="BASE64"><a href="#BASE64" class="headerlink" title="BASE64"></a>BASE64</h2><p>值是由数字”0-9”和字母”a-f”所组成的字符串,大小写敏感,结尾通常有符号&#x3D;</p>
-<h2 id="URL"><a href="#URL" class="headerlink" title="URL"></a>URL</h2><p> 编码是由数字”0-9”和字母”a-f”所组成的字符串,大小写敏感,通常以%数字字母间隔</p>
-<h2 id="HEX"><a href="#HEX" class="headerlink" title="HEX"></a>HEX</h2><p> 编码是计算机中数据的一种表示方法,将数据进行十六进制转换,它由 0-9,A-F,组成</p>
-<h2 id="ASCII-编码"><a href="#ASCII-编码" class="headerlink" title="ASCII 编码"></a>ASCII 编码</h2><p>是将 128 个字符进行进制数来表示,常见 ASCII 码表大小规则：0<del>9&lt;A</del>Z&lt;a~z</p>
-<p>举例：<br>个人博客-URL 解码<br>国外 WEB-BASE64 解码<br>搜狐视频-BASE64 解码<br>应用场景：参数传递(如注入影响)，后期 WAF 绕过干扰写法应用，视频地址还原等</p>
-<h1 id="JS-前端代码加密："><a href="#JS-前端代码加密：" class="headerlink" title="JS 前端代码加密："></a>JS 前端代码加密：</h1><p>JS 颜文字 jother JSFUCK</p>
-<h2 id="颜文字特征："><a href="#颜文字特征：" class="headerlink" title="颜文字特征："></a>颜文字特征：</h2><p>一堆颜文字构成的 js 代码，在 F12 中可直接解密执行</p>
-<h1 id="jother-特征："><a href="#jother-特征：" class="headerlink" title="jother 特征："></a>jother 特征：</h1><p>只用! + ( ) [ ] { }这八个字符就能完成对任意字符串的编码。也可在 F12 中解密执行</p>
-<h1 id="JSFUCK-特征："><a href="#JSFUCK-特征：" class="headerlink" title="JSFUCK 特征："></a>JSFUCK 特征：</h1><p>与 jother 很像，只是少了{ }</p>
-<h1 id="后端代码加密："><a href="#后端代码加密：" class="headerlink" title="后端代码加密："></a>后端代码加密：</h1><p>PHP .NET JAVA</p>
-<h1 id="PHP："><a href="#PHP：" class="headerlink" title="PHP："></a>PHP：</h1><p>乱码，头部有信息</p>
-<h1 id="NET："><a href="#NET：" class="headerlink" title=".NET："></a>.NET：</h1><p>DLL 封装代码文件</p>
-<h1 id="JAVA："><a href="#JAVA：" class="headerlink" title="JAVA："></a>JAVA：</h1><p>JAR&amp;CLASS 文件<br>举例：Zend ILSpy IDEA<br>应用场景：版权代码加密，开发特性，CTF 比赛等<br>数据库密文加密：<br>MYSQL MSSQL 等<br>数据显示编码：<br>UTF-8 GBK2312 等</p>
-<h1 id="mimikatz"><a href="#mimikatz" class="headerlink" title="mimikatz"></a>mimikatz</h1><p>是获取操作系统WINDOWS操作系统上面的一个铭文密码</p>
-<p>资源：<br><a target="_blank" rel="noopener" href="https://www.cmd5.com/">https://www.cmd5.com</a><br><a target="_blank" rel="noopener" href="http://tmxk.org/jother">http://tmxk.org/jother</a><br><a target="_blank" rel="noopener" href="http://www.jsfuck.com/">http://www.jsfuck.com</a><br><a target="_blank" rel="noopener" href="http://www.hiencode.com/">http://www.hiencode.com</a><br><a target="_blank" rel="noopener" href="http://tool.chacuo.net/cryptaes">http://tool.chacuo.net/cryptaes</a><br><a target="_blank" rel="noopener" href="https://utf-8.jp/public/aaencode.html">https://utf-8.jp/public/aaencode.html</a><br>1.30 余种加密编码类型的密文特征分析（建议收藏）<br><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=MzAwNDcxMjI2MA==&mid=2247484455&idx=1&sn=e1b4324ddcf7d6">https://mp.weixin.qq.com/s?__biz=MzAwNDcxMjI2MA==&amp;mid=2247484455&amp;idx=1&amp;sn=e1b4324ddcf7d6</a><br>123be30d9a5613e17b&amp;chksm&#x3D;9b26f60cac517f1a920cf3b73b3212a645aeef78882c47957b9f3c2135cb7ce<br>051c73fe77bb2&amp;mpshare&#x3D;1&amp;scene&#x3D;23&amp;srcid&#x3D;1111auAYWmr1N0NAs9Wp2hGz&amp;sharer_sharetime&#x3D;1605<br>145141579&amp;sharer_shareid&#x3D;5051b3eddbbe2cb698aedf9452370026#rd<br>2.CTF 中常见密码题解密网站总结（建议收藏）<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_41638851/article/details/100526839">https://blog.csdn.net/qq_41638851/article/details/100526839</a><br>3.CTF 密码学常见加密解密总结（建议收藏）<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_40837276/article/details/83080460">https://blog.csdn.net/qq_40837276/article/details/83080460</a></p>
+                <h1 id="sql注入原理"><a href="#sql注入原理" class="headerlink" title="sql注入原理"></a>sql注入原理</h1><h2 id="原因："><a href="#原因：" class="headerlink" title="原因："></a>原因：</h2><p>当web应用向后台数据库传递sql语句时进行数据库操作时，如果对用户输入的参数没有经过严格的过滤处理，那么攻击者就可以构造特殊的sql语句，直接输入数据库引擎执行，获取或修改数据库中的数据。</p>
+<p>四个必须掌握的sql语句：增删改查</p>
+<h1 id="sql注入的目的"><a href="#sql注入的目的" class="headerlink" title="sql注入的目的"></a>sql注入的目的</h1><p>查询数据</p>
+<p>读写文件</p>
+<p>执行命令</p>
+<h1 id="本质："><a href="#本质：" class="headerlink" title="本质："></a>本质：</h1><p>把用户的输入数据当作代码执行</p>
+<h1 id="两个关键点："><a href="#两个关键点：" class="headerlink" title="两个关键点："></a>两个关键点：</h1><h2 id="所有的漏洞都有条件："><a href="#所有的漏洞都有条件：" class="headerlink" title="所有的漏洞都有条件："></a>所有的漏洞都有条件：</h2><p>1.用户能够控制输入的内容</p>
+<p>2.数据库能够执行用户输入的内容</p>
+<h1 id="预编译"><a href="#预编译" class="headerlink" title="预编译"></a>预编译</h1><p>将输入和代码进行分离，这样sql语句就不会执行</p>
+<h1 id="基本查询"><a href="#基本查询" class="headerlink" title="基本查询"></a>基本查询</h1><h2 id="select-from-users-where-id-1"><a href="#select-from-users-where-id-1" class="headerlink" title="select *from users where  id &#x3D;1"></a>select *from users where  id &#x3D;1</h2><p>select  +列名（*代表所有）from+表名   where +条件语句（where可加可不加） </p>
+<p>从user表格，查询所有包含id为1的</p>
+<p>select * from users where id&#x3D;(select id from users where username&#x3D;(‘admin’))</p>
+<p>优先（）查询括号内</p>
+<h1 id="group-by"><a href="#group-by" class="headerlink" title="group by"></a>group by</h1><p>用来分组和order by 功能一样</p>
+<h1 id="limit"><a href="#limit" class="headerlink" title="limit"></a>limit</h1><p>用来限制输出内容数量</p>
+<p>select * from  users limit 1,3</p>
+<p>从第一行到第三行</p>
+<h1 id="and-or"><a href="#and-or" class="headerlink" title="and or"></a>and or</h1><p>与或</p>
+<p>直接跳过</p>
+<h1 id="group-concat"><a href="#group-concat" class="headerlink" title="group_concat"></a>group_concat</h1><p>多行显示在一行</p>
+<h1 id="SQL的危害"><a href="#SQL的危害" class="headerlink" title="SQL的危害"></a>SQL的危害</h1><p>盗取网站的敏感信息</p>
+<p>绕过网站后台的认证          万能密码：’ or 1&#x3D;1#        或者’or ‘（存在漏洞才能用）  ‘1’&#x3D;’1’# </p>
+<p>#：是注释的意思</p>
+<p>%23  –+   –空格   –qwer  也是注释</p>
+<p>注释是写给人看的，#后面的就直接不看了</p>
+<p>SELECT * FROM admin  WHERE username &#x3D;’’   and  password &#x3D; ‘’;</p>
+<p>这是完整的</p>
+<p>但是在usrname里加上万能密码   SELECT * FROM admin  WHERE username &#x3D;’’  变这样，不管后面密码了</p>
+<p>解释万能密码    ‘’  or  1&#x3D;1</p>
+<p>​                             ‘’用户名为空  所以是F  or   1&#x3D;1为T所以这个sql语句为真     SELECT * FROM admin  WHERE username &#x3D;’’   and  password &#x3D; ‘’;所以会跳过  后台认证</p>
+<h1 id="SQL的注入分类"><a href="#SQL的注入分类" class="headerlink" title="SQL的注入分类"></a>SQL的注入分类</h1><h2 id="位置分类："><a href="#位置分类：" class="headerlink" title="位置分类："></a>位置分类：</h2><p>get  post  head头注入</p>
+<h2 id="反馈结果分类："><a href="#反馈结果分类：" class="headerlink" title="反馈结果分类："></a>反馈结果分类：</h2><p>有回显型（显错注入）     无回显（盲注）</p>
+<h2 id="数据类型分类"><a href="#数据类型分类" class="headerlink" title="数据类型分类"></a>数据类型分类</h2><p>数字型：输入的参数为整型，如id 年龄 页码  </p>
+<p>*<strong>有且仅有  0123456789除了这些之外的都叫字符型</strong></p>
+<p>字符型：输入的参数为字符串</p>
+<p>**<u>数字型与字符型的区别</u>：**数字型不需要闭合，字符型一般需要</p>
+<h1 id="SQL注入的流程"><a href="#SQL注入的流程" class="headerlink" title="SQL注入的流程"></a>SQL注入的流程</h1><h2 id="1-寻找注入点"><a href="#1-寻找注入点" class="headerlink" title="1.寻找注入点"></a>1.寻找注入点</h2><p>​         SQL注入    SQL和数据库有交互（登录  注册   搜索框）</p>
+<h2 id="2-判断闭合方式"><a href="#2-判断闭合方式" class="headerlink" title="2.判断闭合方式"></a>2.判断闭合方式</h2><h3 id="1-先判断是数字还是字符"><a href="#1-先判断是数字还是字符" class="headerlink" title="1.先判断是数字还是字符"></a>1.先判断是数字还是字符</h3><p>​            例子     输入？id&#x3D;1asdf，假设是数字型，就会报错，就是数字型，不报错就是字符</p>
+<h3 id="2-再判断闭合方式"><a href="#2-再判断闭合方式" class="headerlink" title="2.再判断闭合方式"></a>2.再判断闭合方式</h3><p>​            ？id&#x3D;1asdf  先加’，没有反应换成”</p>
+<p>‘   ‘       “     “   {    }     [    ]都是成双成对出现的    “iasdf”LIMT   0,1’这里面的“单双引号，因为如果是双的话，会多出来一个’无法解释</p>
+<p><img src="C:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250117115321308.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250117115321308"></p>
+<p>最外面和最里面的单引号是弄起来的是范围，1asdf’是我们自己弄的，不看，最后右边剩了’limt所以是单引号，不看左边</p>
+<h3 id="3-判断列数"><a href="#3-判断列数" class="headerlink" title="3.判断列数"></a>3.判断列数</h3><p>​               order by  列数   用来判断列数</p>
+<p>​                联合查询union select 把前面id改为负的</p>
+<p>​            <strong>取数据</strong>  </p>
+<p>​                  <strong>数据库名</strong></p>
+<p>​                   union  select  1,database(),3   –+</p>
+<p>​                 <strong>查表名</strong></p>
+<p>​                 union  select  1,(select  table_name  from  information_schema.tables   where  table_schema&#x3D;’数据库名’),3   –+ 这样输出会超过一行</p>
+<p>  union  select  1,(select  group_concat(table_name)  from  information_schema.tables   where  table_schema&#x3D;’数据库名’),3   –+ 这样输出就一行</p>
+<p>​                <strong>查列名</strong></p>
+<p>  union  select  1,(select  group_concat(column_name)  from  information_schema.column  where  table_schema&#x3D;’数据库名’  and  table_name&#x3D;’表名’),3   –+ 这样输出就一行</p>
+<p>​                 <strong>具体数据</strong></p>
+<p>​               union   select  1,(select group_concat(password))from users) ,3  –+</p>
+<p>​                 </p>
+<h1 id="使用联合注入"><a href="#使用联合注入" class="headerlink" title="使用联合注入"></a>使用联合注入</h1><p>步骤：1.先查多少字段；2.查回显位；3.查数据库；4.查表名；5.查字段名；6.查所有数据</p>
 
                 
               </div>
@@ -319,8 +350,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>1.16</div>
-      <div>https://znzuishuai.github.io/blog/2025/01/16/1-16/</div>
+      <div>sql注入</div>
+      <div>https://znzuishuai.github.io/blog/2025/01/17/sql注入/</div>
     </div>
     <div class="license-meta">
       
@@ -332,7 +363,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2025年1月16日</div>
+          <div>2025年1月17日</div>
         </div>
       
       
@@ -364,9 +395,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/blog/2025/01/17/sql%E6%B3%A8%E5%85%A5/" title="sql注入">
+                      <a href="/blog/2025/01/17/1-17%E9%A2%98%E8%A7%A3/" title="1.17题解">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">sql注入</span>
+                        <span class="hidden-mobile">1.17题解</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -374,7 +405,7 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/blog/2025/01/16/1-16%E9%A2%98/" title="1.16">
+                      <a href="/blog/2025/01/16/1-16/" title="1.16">
                         <span class="hidden-mobile">1.16</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>

@@ -1,0 +1,762 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/blog/img/fluid.png">
+  <link rel="icon" href="/blog/img/fluid.png">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="一  用万能密码     ‘or’1’&#x3D;’1’  –+ flag	ctfshow{06d5095f-dcd1-4657-82aa-9477c05502af} 二 查数据库  查表名 -1’ union  select  1,(select  group_concat(table_name)  from  information_schema.tables   where  table_s">
+<meta property="og:type" content="article">
+<meta property="og:title" content="1.17题解">
+<meta property="og:url" content="https://znzuishuai.github.io/blog/2025/01/17/1-17%E9%A2%98%E8%A7%A3/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="一  用万能密码     ‘or’1’&#x3D;’1’  –+ flag	ctfshow{06d5095f-dcd1-4657-82aa-9477c05502af} 二 查数据库  查表名 -1’ union  select  1,(select  group_concat(table_name)  from  information_schema.tables   where  table_s">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="c:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250117132437440.png">
+<meta property="og:image" content="c:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250117141051064.png">
+<meta property="og:image" content="c:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250117142219082.png">
+<meta property="og:image" content="c:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250117145725684.png">
+<meta property="og:image" content="c:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250117150042430.png">
+<meta property="og:image" content="c:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250117150734228.png">
+<meta property="og:image" content="c:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250117151213098.png">
+<meta property="og:image" content="c:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250117155447415.png">
+<meta property="og:image" content="c:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250117155829055.png">
+<meta property="og:image" content="c:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250117160048322.png">
+<meta property="og:image" content="c:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250117160254447.png">
+<meta property="og:image" content="c:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250117160748487.png">
+<meta property="og:image" content="c:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250117162911943.png">
+<meta property="og:image" content="c:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250117163156275.png">
+<meta property="og:image" content="c:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250117163233984.png">
+<meta property="og:image" content="c:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250117163513400.png">
+<meta property="og:image" content="c:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250117164131432.png">
+<meta property="og:image" content="c:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250117164535767.png">
+<meta property="og:image" content="c:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250117164611154.png">
+<meta property="og:image" content="c:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250117165519979.png">
+<meta property="og:image" content="c:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250117173814546.png">
+<meta property="og:image" content="c:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250117180031948.png">
+<meta property="og:image" content="c:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250117180226002.png">
+<meta property="og:image" content="c:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250117180326164.png">
+<meta property="og:image" content="c:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250117180927148.png">
+<meta property="og:image" content="c:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250117181848758.png">
+<meta property="og:image" content="c:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250117181957737.png">
+<meta property="og:image" content="c:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250117182158079.png">
+<meta property="og:image" content="c:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250117182637998.png">
+<meta property="og:image" content="c:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250117182719671.png">
+<meta property="og:image" content="c:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250117183358454.png">
+<meta property="og:image" content="c:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250117183620773.png">
+<meta property="og:image" content="c:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250117183341047.png">
+<meta property="og:image" content="c:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250117184143200.png">
+<meta property="og:image" content="c:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250117184338582.png">
+<meta property="article:published_time" content="2025-01-17T05:23:56.000Z">
+<meta property="article:modified_time" content="2025-01-17T10:44:29.848Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="c:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250117132437440.png">
+  
+  
+  
+  <title>1.17题解 - Hexo</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/blog/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/blog/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/blog/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"znzuishuai.github.io","root":"/blog/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/blog/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/blog/js/utils.js" ></script>
+  <script  src="/blog/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/blog/">
+      <strong>Fluid</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/blog/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/blog/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/blog/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/blog/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/blog/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/blog/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="1.17题解"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2025-01-17 13:23" pubdate>
+          2025年1月17日 下午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          753 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          7 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">1.17题解</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="一"><a href="#一" class="headerlink" title="一"></a>一</h1><p><img src="C:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250117132437440.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250117132437440"></p>
+<p><img src="C:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250117141051064.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250117141051064"></p>
+<p>用万能密码     ‘or’1’&#x3D;’1’  –+</p>
+<p>flag<br>	<br>ctfshow{06d5095f-dcd1-4657-82aa-9477c05502af}</p>
+<h1 id="二"><a href="#二" class="headerlink" title="二"></a>二</h1><p><img src="C:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250117142219082.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250117142219082"></p>
+<p>查数据库</p>
+<p><img src="C:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250117145725684.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250117145725684"></p>
+<p>查表名</p>
+<p>-1’ union  select  1,(select  group_concat(table_name)  from  information_schema.tables   where  table_schema&#x3D;’ctfshow_web’)  –+</p>
+<p><img src="C:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250117150042430.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250117150042430"></p>
+<p>查列名</p>
+<p>-1’ union select 1,group_concat(column_name) from information_schema.columns where table_schema&#x3D;database() and table_name&#x3D;’ctfshow_user’ –+</p>
+<p><img src="C:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250117150734228.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250117150734228"></p>
+<p>查数据</p>
+<p><img src="C:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250117151213098.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250117151213098"></p>
+<h1 id="三"><a href="#三" class="headerlink" title="三"></a>三</h1><p><img src="C:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250117155447415.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250117155447415"></p>
+<p>判断出来了回显点已经</p>
+<p>查到数据库名是这个</p>
+<p>ctfshow_web</p>
+<p><img src="C:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250117155829055.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250117155829055"></p>
+<p>查表名</p>
+<p>得到</p>
+<p>ctfshow_user,ctfshow_user2,ctfshow_user3</p>
+<p><img src="C:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250117160048322.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250117160048322"></p>
+<p>2，3中的一样</p>
+<p><img src="C:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250117160254447.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250117160254447"></p>
+<p>列名也找出来了</p>
+<p>-1’ union select 1,2,group_concat(password) from ctfshow_user3 –+</p>
+<p>user2里面没有</p>
+<p><img src="C:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250117160748487.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250117160748487"></p>
+<p>得到</p>
+<h1 id="四"><a href="#四" class="headerlink" title="四"></a>四</h1><p>不是sql了</p>
+<p>因为我查回显点连1都显示错误了，应该还没有学到那里的知识点</p>
+<p><img src="C:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250117162911943.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250117162911943"></p>
+<p>vim之前学过</p>
+<p>vim泄露会有三个文件</p>
+<p>.swp   .swo   .swn</p>
+<p>访问一下index.php.swp</p>
+<p><img src="C:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250117163156275.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250117163156275"></p>
+<p>得到flag</p>
+<h1 id="五"><a href="#五" class="headerlink" title="五"></a>五</h1><p><img src="C:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250117163233984.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250117163233984"></p>
+<p>cookie</p>
+<p>经过之前的经验，应该是先抓包看看</p>
+<p><img src="C:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250117163513400.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250117163513400"></p>
+<p>不大像答案的格式</p>
+<p>弄进去试试</p>
+<p>果然不是</p>
+<p>根据昨天视频所学，这个像是URL编码，需要解码一下</p>
+<p><img src="C:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250117164131432.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250117164131432"></p>
+<h1 id="六"><a href="#六" class="headerlink" title="六"></a>六</h1><p>来一道密码的题</p>
+<p><img src="C:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250117164535767.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250117164535767"></p>
+<p>打开是颜文字</p>
+<p><img src="C:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250117164611154.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250117164611154"></p>
+<p>全是颜文字，可以直接在控制台上做</p>
+<p><img src="C:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250117165519979.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250117165519979"></p>
+<p>得到</p>
+<h1 id="七"><a href="#七" class="headerlink" title="七"></a>七</h1><p><img src="C:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250117173814546.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250117173814546"></p>
+<p>获得了6个文件</p>
+<p>都放到winhex看看</p>
+<p>文件头均不对</p>
+<p>开始改</p>
+<p>文件头补充：</p>
+<p>图像文件<br>JPEG: (文件头 FF D8 FF), (文件尾 FF D9)<br>TGA:未压缩: (文件头 00 00 02 00)；RLE压缩: (文件头 00 00 10 00 00)<br>PNG: (文件头 89 50 4E 47 0D 0A 1A 0A), (文件尾 AE 42 60 82)<br>GIF: (文件头 47 49 46 38 39(37) 61), (文件尾 00 3B)BMP: (文件头 42 4D)<br>TIFF: (文件头 49 49 2A 00)<br>ICO: (文件头 00 00 01 00)AdobePhotoshop(PSD): (文件头 38 42 50 53)</p>
+<p>Office文件<br>MS Word&#x2F;Excel: (文件头 D0 CF 11 E0)<br>MS Access: (文件头 53 74 61 6E 64 61 72 64 20 4A)<br>WordPerfect: (文件头 FF 57 50 43)<br>Adobe Acrobat (PDF): (文件头 25 50 44 46 2D 31 2E)<br>Visio: (文件头 D0 CF 11 E0 A1 B1 1A E1)<br>Email (EML): (文件头 44 65 6C 69 76 65 72 79 2D 64 61 74 65 3A)<br>Outlook Express: (文件头 CF AD 12 FE C5 FD 74 6F)<br>Outlook (.pst): (文件头 21 42 44 4E)<br>RTF: (文件头 7B 5C 72 74 66)<br>TXT:Unicode: (文件头 FE FF)；Big Endian: (文件头 FF FE)；UTF-8: (文件头 EF BB BF)</p>
+<p>压缩包文件<br>ZIP: (文件头 50 4B 03 04), (文件尾 50 4B)<br>RAR: (文件头 52 61 72 21)</p>
+<p>音频文件<br>Wave: (文件头 57 41 56 45)<br>MIDI: (文件头 4D 54 68 64)<br>AAC: (文件头 FF F1(9))</p>
+<p>视频文件<br>AVI: (文件头 41 56 49 20)<br>Real Audio: (文件头 2E 72 61 FD)<br>Real Media: (文件头 2E 52 4D 46)<br>MPEG: (文件头 00 00 01 BA(3))<br>Quicktime: (文件头 6D 6F 6F 76)<br>Windows Media: (文件头 30 26 B2 75 8E 66 CF 11)</p>
+<p>编码文件<br>XML: (文件头 3C 3F 78 6D 6C)<br>HTML: (文件头 68 74 6D 6C 3E)其他类型：<br>Windows Certificate: (文件头 30 82 03 C9)<br>CAD: (文件头 41 43 31 30)<br>Windows Shortcut: (文件头 4C 00 00 00)<br>Windows Registry: (文件头 52 45 47 45 44 49 54 34)<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=%E9%9F%B3%E9%A2%91%E6%96%87%E4%BB%B6&spm=1001.2101.3001.7020">音频文件</a>：<br><a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=MP3&spm=1001.2101.3001.7020">MP3</a>：文件头格式为49 44 33，文件尾格式为FF FB。<br>WAV：文件头格式为52 49 46 46，文件尾格式为3E 00 00 00。</p>
+<p>webp:有RIFF</p>
+<p><img src="C:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250117180031948.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250117180031948"></p>
+<p>六个均是图片，连起来就是答案</p>
+<h1 id="八"><a href="#八" class="headerlink" title="八"></a>八</h1><p><img src="C:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250117180226002.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250117180226002"></p>
+<p>包不信的</p>
+<p>放到winhex中看看</p>
+<p><img src="C:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250117180326164.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250117180326164"></p>
+<p>在最下面</p>
+<h1 id="九"><a href="#九" class="headerlink" title="九"></a>九</h1><p><img src="C:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250117180927148.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250117180927148"></p>
+<p>打开是个网页蒙了</p>
+<p>回想一下，已经学的东西，bp，githack，dirsearch，查看源代码</p>
+<p>除了githack都试一遍</p>
+<p><img src="C:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250117181848758.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250117181848758"></p>
+<p>有一个机器人</p>
+<p><img src="C:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250117181957737.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250117181957737"></p>
+<p><img src="C:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250117182158079.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250117182158079"></p>
+<p>炸了，还需要密码</p>
+<p><img src="C:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250117182637998.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250117182637998"></p>
+<p>或许是这个？</p>
+<p><img src="C:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250117182719671.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250117182719671"></p>
+<p>成功</p>
+<h1 id="十"><a href="#十" class="headerlink" title="十"></a>十</h1><p><img src="C:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250117183358454.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250117183358454"></p>
+<p>这个也是个网页服了</p>
+<p>试试之前的方法</p>
+<p><img src="C:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250117183620773.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250117183620773"></p>
+<p>但是这些好像都是上面的标题</p>
+<p>可恶，啥也没有</p>
+<p>bp也不可以</p>
+<p>服了，弄了半天，无意间发现鼠标变了，进来，找到个这个</p>
+<p><img src="C:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250117183341047.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250117183341047"></p>
+<p>可是这个链接，在虚拟机和本地都没法进去</p>
+<p>但是</p>
+<p><img src="C:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250117184143200.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250117184143200"></p>
+<p>本地是这样</p>
+<p>哈啊哈，瞟到了提示</p>
+<p>出现了个</p>
+<p><img src="C:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250117184338582.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250117184338582"></p>
+<p>把密码输进去</p>
+<p>ctfshow{f6937d14-08df-46c9-8e4b-6f79861523d5}</p>
+<p>得到了！</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>1.17题解</div>
+      <div>https://znzuishuai.github.io/blog/2025/01/17/1-17题解/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>John Doe</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2025年1月17日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/blog/2025/01/17/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" title="数据库的基础知识">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">数据库的基础知识</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/blog/2025/01/17/sql%E6%B3%A8%E5%85%A5/" title="sql注入">
+                        <span class="hidden-mobile">sql注入</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/blog/js/events.js" ></script>
+<script  src="/blog/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/blog/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/blog/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/blog/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
