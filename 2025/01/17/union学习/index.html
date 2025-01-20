@@ -27,7 +27,7 @@
 <meta property="og:description" content="union注入即为用union联合查询来查询指定的数据，需要根据每一步的返回结果来判断和进行下一步操作。此仅为个人的学习笔记。 结构联合查询的语句结构基本为： select a from b union select c from d where e;1union会一次显示两个查询结果，使第一个查询语句作为正常内容，第二个作为查询语句来进行构造。 第一步：判断类型数字型判断共分3步判断步骤：1.加">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-01-17T06:45:38.000Z">
-<meta property="article:modified_time" content="2025-01-17T07:44:34.363Z">
+<meta property="article:modified_time" content="2025-01-18T07:12:51.961Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary_large_image">
   
@@ -222,7 +222,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          982 字
+          989 字
         
       </span>
     
@@ -312,6 +312,7 @@
 <p>-1’ union select 1,(select group_concat(column_name) from information_schema.columns where table_schema&#x3D;‘xxx’ and<br>table_name&#x3D;‘xxx’) –+<br>1<br>2<br>即为查询数据库xxx下表xxx中的所有字段.<br>其中：Column_name 为字段&#x2F;列名称。</p>
 </blockquote>
 <p>最后：查数据<br>经过上述六步，获得了库名，表名，字段名后，在可以回显的位置输入SQL语句即可。</p>
+<p>数字型union联合法</p>
 
                 
               </div>

@@ -19,25 +19,19 @@
   <meta name="author" content="John Doe">
   <meta name="keywords" content="">
   
-    <meta name="description" content="sql注入原理原因：当web应用向后台数据库传递sql语句时进行数据库操作时，如果对用户输入的参数没有经过严格的过滤处理，那么攻击者就可以构造特殊的sql语句，直接输入数据库引擎执行，获取或修改数据库中的数据。 四个必须掌握的sql语句：增删改查 sql注入的目的查询数据 读写文件 执行命令 本质：把用户的输入数据当作代码执行 两个关键点：所有的漏洞都有条件：1.用户能够控制输入的内容 2.数据库">
-<meta property="og:type" content="article">
-<meta property="og:title" content="sql注入">
-<meta property="og:url" content="https://znzuishuai.github.io/blog/2025/01/17/sql%E6%B3%A8%E5%85%A5/index.html">
+    <meta property="og:type" content="article">
+<meta property="og:title" content="代码审计">
+<meta property="og:url" content="https://znzuishuai.github.io/blog/2025/01/19/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="sql注入原理原因：当web应用向后台数据库传递sql语句时进行数据库操作时，如果对用户输入的参数没有经过严格的过滤处理，那么攻击者就可以构造特殊的sql语句，直接输入数据库引擎执行，获取或修改数据库中的数据。 四个必须掌握的sql语句：增删改查 sql注入的目的查询数据 读写文件 执行命令 本质：把用户的输入数据当作代码执行 两个关键点：所有的漏洞都有条件：1.用户能够控制输入的内容 2.数据库">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="c:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250117233032444.png">
-<meta property="og:image" content="c:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250117233306783.png">
-<meta property="og:image" content="https://znzuishuai.github.io/blog/image/image-20250117115321308.png">
-<meta property="article:published_time" content="2025-01-17T01:54:59.000Z">
-<meta property="article:modified_time" content="2025-01-18T06:19:10.255Z">
+<meta property="article:published_time" content="2025-01-19T01:14:40.000Z">
+<meta property="article:modified_time" content="2025-01-19T02:00:07.393Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="c:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250117233032444.png">
   
   
   
-  <title>sql注入 - Hexo</title>
+  <title>代码审计 - Hexo</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -203,7 +197,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="sql注入"></span>
+            <span id="subtitle" data-typed-text="代码审计"></span>
           
         </div>
 
@@ -214,8 +208,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-01-17 09:54" pubdate>
-          2025年1月17日 上午
+        <time datetime="2025-01-19 09:14" pubdate>
+          2025年1月19日 上午
         </time>
       </span>
     
@@ -226,7 +220,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          922 字
+          0 字
         
       </span>
     
@@ -237,7 +231,7 @@
         
         
         
-          8 分钟
+          1 分钟
         
       </span>
     
@@ -274,71 +268,12 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">sql注入</h1>
+            <h1 id="seo-header">代码审计</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="sql注入原理"><a href="#sql注入原理" class="headerlink" title="sql注入原理"></a>sql注入原理</h1><h2 id="原因："><a href="#原因：" class="headerlink" title="原因："></a>原因：</h2><p>当web应用向后台数据库传递sql语句时进行数据库操作时，如果对用户输入的参数没有经过严格的过滤处理，那么攻击者就可以构造特殊的sql语句，直接输入数据库引擎执行，获取或修改数据库中的数据。</p>
-<p>四个必须掌握的sql语句：增删改查</p>
-<h1 id="sql注入的目的"><a href="#sql注入的目的" class="headerlink" title="sql注入的目的"></a>sql注入的目的</h1><p>查询数据</p>
-<p>读写文件</p>
-<p>执行命令</p>
-<h1 id="本质："><a href="#本质：" class="headerlink" title="本质："></a>本质：</h1><p>把用户的输入数据当作代码执行</p>
-<h1 id="两个关键点："><a href="#两个关键点：" class="headerlink" title="两个关键点："></a>两个关键点：</h1><h2 id="所有的漏洞都有条件："><a href="#所有的漏洞都有条件：" class="headerlink" title="所有的漏洞都有条件："></a>所有的漏洞都有条件：</h2><p>1.用户能够控制输入的内容</p>
-<p>2.数据库能够执行用户输入的内容</p>
-<h1 id="预编译"><a href="#预编译" class="headerlink" title="预编译"></a>预编译</h1><p>将输入和代码进行分离，这样sql语句就不会执行</p>
-<h1 id="基本查询"><a href="#基本查询" class="headerlink" title="基本查询"></a>基本查询</h1><h2 id="select-from-users-where-id-1"><a href="#select-from-users-where-id-1" class="headerlink" title="select *from users where  id &#x3D;1"></a>select *from users where  id &#x3D;1</h2><p>select  +列名（*代表所有）from+表名   where +条件语句（where可加可不加） </p>
-<p>从user表格，查询所有包含id为1的</p>
-<p>select * from users where id&#x3D;(select id from users where username&#x3D;(‘admin’))</p>
-<p>优先（）查询括号内</p>
-<h1 id="group-by"><a href="#group-by" class="headerlink" title="group by"></a>group by</h1><p>用来分组和order by 功能一样</p>
-<h1 id="limit"><a href="#limit" class="headerlink" title="limit"></a>limit</h1><p>用来限制输出内容数量</p>
-<p>select * from  users limit 1,3</p>
-<p>从第一行到第三行</p>
-<h1 id="and-or"><a href="#and-or" class="headerlink" title="and or"></a>and or</h1><p>与或</p>
-<p>直接跳过</p>
-<h1 id="group-concat"><a href="#group-concat" class="headerlink" title="group_concat"></a>group_concat</h1><p>多行显示在一行</p>
-<h1 id="SQL的危害"><a href="#SQL的危害" class="headerlink" title="SQL的危害"></a>SQL的危害</h1><p>盗取网站的敏感信息</p>
-<p>绕过网站后台的认证          万能密码：’ or 1&#x3D;1#        或者’or ‘（存在漏洞才能用）  ‘1’&#x3D;’1’# </p>
-<p>#：是注释的意思</p>
-<p>%23  –+   –空格   –qwer  也是注释</p>
-<p>注释是写给人看的，#后面的就直接不看了</p>
-<p>SELECT * FROM admin  WHERE username &#x3D;’’   and  password &#x3D; ‘’;</p>
-<p>这是完整的</p>
-<p>但是在usrname里加上万能密码   SELECT * FROM admin  WHERE username &#x3D;’’  变这样，不管后面密码了</p>
-<p>解释万能密码    ‘’  or  1&#x3D;1</p>
-<p>​                             ‘’用户名为空  所以是F  or   1&#x3D;1为T所以这个sql语句为真     SELECT * FROM admin  WHERE username &#x3D;’’   and  password &#x3D; ‘’;所以会跳过  后台认证</p>
-<h1 id="SQL的注入分类"><a href="#SQL的注入分类" class="headerlink" title="SQL的注入分类"></a>SQL的注入分类</h1><h2 id="位置分类："><a href="#位置分类：" class="headerlink" title="位置分类："></a>位置分类：</h2><p>get  post  head头注入</p>
-<h2 id="反馈结果分类："><a href="#反馈结果分类：" class="headerlink" title="反馈结果分类："></a>反馈结果分类：</h2><p>有回显型（显错注入）     无回显（盲注）</p>
-<h2 id="数据类型分类"><a href="#数据类型分类" class="headerlink" title="数据类型分类"></a>数据类型分类</h2><p>数字型：输入的参数为整型，如id 年龄 页码  </p>
-<p>*<strong>有且仅有  0123456789除了这些之外的都叫字符型</strong></p>
-<p>字符型：输入的参数为字符串，也有可能是数字</p>
-<p>**<u>数字型与字符型的区别</u>：**数字型不需要闭合，字符型一般需要</p>
-<h1 id="SQL注入的流程"><a href="#SQL注入的流程" class="headerlink" title="SQL注入的流程"></a>SQL注入的流程</h1><h2 id="1-寻找注入点"><a href="#1-寻找注入点" class="headerlink" title="1.寻找注入点"></a>1.寻找注入点</h2><p>​         SQL注入    SQL和数据库有交互（登录  注册   搜索框）</p>
-<h2 id="2-判断闭合方式"><a href="#2-判断闭合方式" class="headerlink" title="2.判断闭合方式"></a>2.判断闭合方式</h2><h3 id="1-先判断是数字还是字符"><a href="#1-先判断是数字还是字符" class="headerlink" title="1.先判断是数字还是字符"></a>1.先判断是数字还是字符</h3><p>​            例子     输入？id&#x3D;1asdf，假设是数字型，就会报错，就是数字型，不报错就是字符</p>
-<p>​        还有一种情况      and 1&#x3D;1 和and 1&#x3D;2    数字型前面是对，后面报错    字符型前面报对，后面也对</p>
-<h3 id="2-再判断闭合方式"><a href="#2-再判断闭合方式" class="headerlink" title="2.再判断闭合方式"></a>2.再判断闭合方式</h3><p><img src="C:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250117233032444.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250117233032444"></p>
-<p><img src="C:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250117233306783.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250117233306783"></p>
-<p>​            ？id&#x3D;1asdf  先加’，没有反应换成”</p>
-<p>‘   ‘       “     “   {    }     [    ]都是成双成对出现的    “iasdf”LIMT   0,1’这里面的“单双引号，因为如果是双的话，会多出来一个’无法解释</p>
-<p><img src="/blog/image/image-20250117115321308.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250117115321308"></p>
-<p>最外面和最里面的单引号是弄起来的是范围，1asdf’是我们自己弄的，不看，最后右边剩了’limt所以是单引号，不看左边</p>
-<h3 id="3-判断列数"><a href="#3-判断列数" class="headerlink" title="3.判断列数"></a>3.判断列数</h3><p>​               order by  列数   用来判断列数</p>
-<p>​                联合查询union select 把前面id改为负的</p>
-<p>​            <strong>取数据</strong>  </p>
-<p>​                  <strong>数据库名</strong></p>
-<p>​                   union  select  1,database(),3   –+</p>
-<p>​                 <strong>查表名</strong></p>
-<p>​                 union  select  1,(select  table_name  from  information_schema.tables   where  table_schema&#x3D;’数据库名’),3   –+ 这样输出会超过一行</p>
-<p>  union  select  1,(select  group_concat(table_name)  from  information_schema.tables   where  table_schema&#x3D;’数据库名’),3   –+ 这样输出就一行</p>
-<p>​                <strong>查列名</strong></p>
-<p>  union  select  1,(select  group_concat(column_name)  from  information_schema.column  where  table_schema&#x3D;’数据库名’  and  table_name&#x3D;’表名’),3   –+ 这样输出就一行</p>
-<p>​                 <strong>具体数据</strong></p>
-<p>​               union   select  1,(select group_concat(password))from users) ,3  –+</p>
-<p>​                 </p>
-<h1 id="使用联合注入"><a href="#使用联合注入" class="headerlink" title="使用联合注入"></a>使用联合注入</h1><p>步骤：1.先查多少字段；2.查回显位；3.查数据库；4.查表名；5.查字段名；6.查所有数据</p>
-
+                
                 
               </div>
             
@@ -355,8 +290,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>sql注入</div>
-      <div>https://znzuishuai.github.io/blog/2025/01/17/sql注入/</div>
+      <div>代码审计</div>
+      <div>https://znzuishuai.github.io/blog/2025/01/19/代码审计/</div>
     </div>
     <div class="license-meta">
       
@@ -368,7 +303,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2025年1月17日</div>
+          <div>2025年1月19日</div>
         </div>
       
       
@@ -400,9 +335,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/blog/2025/01/17/1-17%E9%A2%98%E8%A7%A3/" title="1.17题解">
+                      <a href="/blog/2025/01/20/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/" title="命令执行">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">1.17题解</span>
+                        <span class="hidden-mobile">命令执行</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -410,8 +345,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/blog/2025/01/16/1-16/" title="1.16">
-                        <span class="hidden-mobile">1.16</span>
+                      <a href="/blog/2025/01/18/%E7%9B%B2%E6%B3%A8/" title="盲注">
+                        <span class="hidden-mobile">盲注</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
